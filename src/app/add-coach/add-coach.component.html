@@ -1,0 +1,19 @@
+<h2>Ajouter un Coach</h2>
+<form [formGroup]="addCoachForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="firstname">Prénom</label>
+    <input type="text" formControlName="firstName" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label for="lastname">Nom</label>
+    <input type="text" formControlName="lastName" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label for="dateofbirth">Date de naissance</label>
+    <input type="text" formControlName="dateOfBirth" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label for="firstname">Prénom</label>
+    <input type="text" formControlName="firstName" class="form-control" />
+  </div>
+</form>
