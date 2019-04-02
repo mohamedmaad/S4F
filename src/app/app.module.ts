@@ -2,6 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
+import { FormsModule } from '@angular/forms'
 
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers'
@@ -22,7 +23,13 @@ import { CoachDetailComponent } from './coach-detail/coach-detail.component'
 import { AddCoachComponent } from './add-coach/add-coach.component'
 
 @NgModule({
-  imports: [BrowserModule, ReactiveFormsModule, HttpClientModule, routing],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+    routing,
+  ],
   declarations: [
     AppComponent,
     AlertComponent,

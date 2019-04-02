@@ -1,21 +1,40 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2>Listes des coaches</h2>
-  </div>
-  <div class="col-md-6">
-    <button class="btn btn-secondary">Créer un nouveau Coach</button>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-6">
-    <ul class="coaches">
-      <li *ngFor="let coach of coaches">
-        <a routerLink="/detail/{{ coach.id }}">
-          <span class="badge">{{ coach.id }}</span> {{ coach.firstName }}
-          {{ coach.lastName }}
+<div class="d-flex justify-content-between">
+  <div class="w-50">
+    <div class="w-100">
+      <div class="d-flex justify-content-around align-items-center">
+        <h2>Listes des coaches</h2>
+        <a
+          class="btn btn-secondary"
+          *ngIf="router.url == '/coaches'"
+          [routerLink]="'/coaches/add'"
+        >
+          Créer un nouveau Coach
         </a>
-      </li>
-    </ul>
+        <a
+          class="btn btn-danger"
+          *ngIf="router.url == '/coaches/add'"
+          [routerLink]="'/coaches'"
+          >Retour</a
+        >
+      </div>
+    </div>
+    <div class="row w-50">
+      <div class="w-100">
+        <ul class="coaches">
+          <li *ngFor="let coach of coaches">
+            <a routerLink="/detail/{{ coach.id }}">
+              <span class="badge">{{ coach.id }}</span> {{ coach.firstName }}
+              {{ coach.lastName }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
+
+  <app-add-coach
+    class="w-50"
+    *ngIf="router.url == '/coaches/add'"
+    (coachIsCreate)="addCoachToList($event)"
+  ></app-add-coach>
 </div>

@@ -6,7 +6,7 @@ export class Coach {
   civility: string
   company: string
   speciality: string
-  mail: string
+  email: string
   tel: string
   password: string
 }

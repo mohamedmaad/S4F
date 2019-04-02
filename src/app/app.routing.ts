@@ -13,6 +13,7 @@ const appRoutes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'coaches', component: CoachesComponent },
   { path: 'detail/:id', component: CoachDetailComponent },
+  { path: 'coaches/add', component: CoachesComponent },
 
   // otherwise redirect to home
   { path: '**', redirectTo: '' },
