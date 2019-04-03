@@ -12,7 +12,7 @@ export const COMPANIES: Company[] = [
   },
   {
     id: 2,
-    name: 'Peugeot',
+    name: 'Renault',
     activity: 'Automobile',
     employeesNumber: 19999,
     adress: '111 rue Poissy, Poissy',
@@ -21,7 +21,7 @@ export const COMPANIES: Company[] = [
   },
   {
     id: 3,
-    name: 'Peugeot',
+    name: 'Citroen',
     activity: 'Automobile',
     employeesNumber: 19999,
     adress: '111 rue Poissy, Poissy',
@@ -30,7 +30,7 @@ export const COMPANIES: Company[] = [
   },
   {
     id: 4,
-    name: 'Peugeot',
+    name: 'Nissan',
     activity: 'Automobile',
     employeesNumber: 19999,
     adress: '111 rue Poissy, Poissy',
@@ -39,7 +39,7 @@ export const COMPANIES: Company[] = [
   },
   {
     id: 5,
-    name: 'Peugeot',
+    name: 'DS',
     activity: 'Automobile',
     employeesNumber: 19999,
     adress: '111 rue Poissy, Poissy',

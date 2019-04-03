@@ -1,4 +1,5 @@
 export class Session {
+  id: number
   company: string
   coach: string
   date: string

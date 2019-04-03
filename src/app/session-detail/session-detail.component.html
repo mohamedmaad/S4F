@@ -1,0 +1,19 @@
+<div *ngIf="session">
+    <h2>
+      {{ "séance" | uppercase }}
+      {{ session.id }} Details
+    </h2>
+  
+    <div><span>Coach: </span>{{ session.coach }}</div>
+    <div><span>Date: </span>{{ session.date }}</div>
+    <div><span>Entreprise: </span>{{ session.company }}</div>
+    <div><span>Heure: </span>{{ session.hour }}</div>
+    <div><span>Duration: </span>{{ session.duration }}</div>
+    <div><span>Nombre de participants: </span>{{ session.minParticipants }}</div>
+    <div><span>Nombre de participants total: </span>{{ session.maxParticipants }}</div>
+  </div>
+  <br />
+  <div>
+    <button (click)="goBack()" class="btn btn-success">Retour</button>
+  </div>
+  

@@ -2,6 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
 
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers'
@@ -9,6 +10,7 @@ import { fakeBackendProvider } from './_helpers'
 import { AppComponent } from './app.component'
 import { routing } from './app.routing'
 
+import { CommonModule } from '@angular/common'
 import { AlertComponent } from './_components'
 import { JwtInterceptor, ErrorInterceptor } from './_helpers'
 import { HomeComponent } from './home'
@@ -20,9 +22,11 @@ import { CoachesComponent } from './coaches/coaches.component'
 import { SessionsComponent } from './sessions/sessions.component'
 import { CoachDetailComponent } from './coach-detail/coach-detail.component'
 import { AddCoachComponent } from './add-coach/add-coach.component'
+import { AddSessionComponent } from './add-session/add-session.component'
+import { SessionDetailComponent } from './session-detail/session-detail.component'
 
 @NgModule({
-  imports: [BrowserModule, ReactiveFormsModule, HttpClientModule, routing],
+  imports: [BrowserModule, ReactiveFormsModule, HttpClientModule, routing, FormsModule, CommonModule],
   declarations: [
     AppComponent,
     AlertComponent,
@@ -37,6 +41,9 @@ import { AddCoachComponent } from './add-coach/add-coach.component'
     SessionsComponent,
     CoachDetailComponent,
     AddCoachComponent,
+    AddSessionComponent
+,
+    SessionDetailComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
