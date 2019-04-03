@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core'
 import { Coach } from '@app/_models/coach'
 //import { COACHES } from '@app/mock/mock-coaches'
 import { CoachService } from '@app/_services/coach.service'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-coaches',
@@ -18,7 +19,7 @@ export class CoachesComponent implements OnInit {
     civility: 'Homme',
     company: 'Street4Fit',
     speciality: 'JJB',
-    mail: 'moh@hotmail.fr',
+    email: 'moh@hotmail.fr',
     tel: '06989898983',
     password: 'momo',
   }
@@ -27,7 +28,7 @@ export class CoachesComponent implements OnInit {
 
   coaches: Coach[]
 
-  constructor(private coachService: CoachService) {}
+  constructor(private coachService: CoachService, private router: Router) {}
 
   ngOnInit() {
     this.getCoaches()
@@ -42,4 +43,15 @@ export class CoachesComponent implements OnInit {
   /*onSelect(coach: Coach): void {
     this.selectedCoach = coach
   }*/
+
+  addCoachToList(event: any) {
+    console.log(event)
+
+    const theCoach: Coach = event.theCoach
+
+    let id: number = this.coaches.length
+    theCoach.id = id += 1
+
+    this.coaches.push(theCoach)
+  }
 }
