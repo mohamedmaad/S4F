@@ -1,12 +1,21 @@
-<h2>{{ company.name | uppercase }} Details</h2>
-<div><span>Nom: </span>{{ company.name }}</div>
+<div class="row">
+  <div class="col-md-6">
+    <h2>Listes des Entreprises</h2>
+  </div>
+  <div class="col-md-6">
+    <button class="btn btn-secondary">Ajouter une nouvelle entreprise</button>
+  </div>
+</div>
 
-<div><span>Secteur d'activité: </span>{{ company.activity }}</div>
-
-<div><span>Nombre de salariés: </span>{{ company.employeesNumber }}</div>
-
-<div><span>Adresse: </span>{{ company.adress }}</div>
-
-<div><span>Email: </span>{{ company.mail }}</div>
-
-<div><span>Téléphone: </span>{{ company.tel }}</div>
+<div class="row">
+  <div class="col-md-6">
+    <ul class="company">
+      <li *ngFor="let company of companies">
+        <a routerLink="/entreprise/detail/{{ company.id }}">
+          <span class="badge">{{ company.id }}</span> {{ company.name }}
+          {{ company.activity }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

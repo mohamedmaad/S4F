@@ -24,9 +24,17 @@ import { CoachDetailComponent } from './coach-detail/coach-detail.component'
 import { AddCoachComponent } from './add-coach/add-coach.component'
 import { AddSessionComponent } from './add-session/add-session.component'
 import { SessionDetailComponent } from './session-detail/session-detail.component'
+import { CompanyDetailComponent } from './company-detail/company-detail.component'
 
 @NgModule({
-  imports: [BrowserModule, ReactiveFormsModule, HttpClientModule, routing, FormsModule, CommonModule],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    routing,
+    FormsModule,
+    CommonModule,
+  ],
   declarations: [
     AppComponent,
     AlertComponent,
@@ -34,16 +42,14 @@ import { SessionDetailComponent } from './session-detail/session-detail.componen
     LoginComponent,
     RegisterComponent,
     CompanyComponent,
-    CompanyComponent,
-    CoachesComponent,
+    CompanyDetailComponent,
     EmployeesComponent,
     CoachesComponent,
-    SessionsComponent,
     CoachDetailComponent,
     AddCoachComponent,
-    AddSessionComponent
-,
-    SessionDetailComponent
+    SessionsComponent,
+    AddSessionComponent,
+    SessionDetailComponent,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
