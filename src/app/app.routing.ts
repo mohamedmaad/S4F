@@ -2,6 +2,7 @@
 
 import { HomeComponent } from './home'
 import { LoginComponent } from './login'
+import { ProfilComponent } from './profil/profil.component'
 import { RegisterComponent } from './register'
 import { AuthGuard } from './_guards'
 import { CoachesComponent } from '@app/coaches/coaches.component'
@@ -12,9 +13,11 @@ import { SessionDetailComponent } from './session-detail/session-detail.componen
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
+  { path: 'profil', component: ProfilComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'coaches', component: CoachesComponent },
   { path: 'detail/:id', component: CoachDetailComponent },
+  { path: 'coaches/add', component: CoachesComponent },
   { path: 'seances', component: SessionsComponent },
   { path: 'seances/ajouter', component: SessionsComponent },
   { path: 'seances/voir/:id', component: SessionDetailComponent },

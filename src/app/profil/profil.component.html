@@ -1,0 +1,29 @@
+
+<h1 class="text-center">Profil</h1>
+<div class="row">
+
+
+<div class="col-2">
+    <img src="../../assets/img/47682658_579366792507336_2199209627067875328_n.png" alt="..." class="img-thumbnail rounded-circle">
+</div>
+<div class="col-4 mb-5">
+  <ul class="pr-5" >
+
+    <li > {{ id }} {{ firstName }} </li>
+
+  </ul>
+</div>
+</div>
+
+<div class="row mt-5">
+  <div class="col-6">
+      <ul class="coaches">
+          <li *ngFor="let coach of coaches">
+            <a routerLink="/detail/{{ coach.id }}">
+              <span class="badge">{{ coach.id }}</span> {{ coach.firstName }}
+              {{ coach.lastName }}
+            </a>
+          </li>
+        </ul>
+  </div>
+</div>

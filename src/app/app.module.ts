@@ -23,8 +23,10 @@ import { SessionsComponent } from './sessions/sessions.component'
 import { CoachDetailComponent } from './coach-detail/coach-detail.component'
 import { AddCoachComponent } from './add-coach/add-coach.component'
 import { AddSessionComponent } from './add-session/add-session.component'
-import { SessionDetailComponent } from './session-detail/session-detail.component'
-
+import { SessionDetailComponent } from './session-detail/session-detail.component';
+import { NavbarComponent } from './navbar/navbar.component'
+;
+import { ProfilComponent } from './profil/profil.component'
 @NgModule({
   imports: [BrowserModule, ReactiveFormsModule, HttpClientModule, routing, FormsModule, CommonModule],
   declarations: [
@@ -43,8 +45,10 @@ import { SessionDetailComponent } from './session-detail/session-detail.componen
     AddCoachComponent,
     AddSessionComponent
 ,
-    SessionDetailComponent
-  ],
+    SessionDetailComponent,
+    NavbarComponent
+,
+    ProfilComponent  ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
