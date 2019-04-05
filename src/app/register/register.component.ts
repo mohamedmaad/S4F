@@ -5,6 +5,10 @@ import { first } from 'rxjs/operators';
 
 import { AlertService, UserService, AuthenticationService } from '@app/_services';
 
+import { MustMatch } from '@app/_helpers/must-match.validator';
+
+
+
 @Component({templateUrl: 'register.component.html'})
 export class RegisterComponent implements OnInit {
     registerForm: FormGroup;
@@ -17,9 +21,9 @@ export class RegisterComponent implements OnInit {
         private authenticationService: AuthenticationService,
         private userService: UserService,
         private alertService: AlertService
-    ) { 
+    ) {
         // redirect to home if already logged in
-        if (this.authenticationService.currentUserValue) { 
+        if (this.authenticationService.currentUserValue) {
             this.router.navigate(['/']);
         }
     }
@@ -29,8 +33,15 @@ export class RegisterComponent implements OnInit {
             firstName: ['', Validators.required],
             lastName: ['', Validators.required],
             username: ['', Validators.required],
-            password: ['', [Validators.required, Validators.minLength(6)]]
-        });
+            email: ['', Validators.required],
+            password: ['', [Validators.required, Validators.minLength(6)]],
+
+            /** confirm Password here */
+            confirmPassword: ['', Validators.required]
+        },
+        { validator: MustMatch('password', 'confirmPassword')}
+        );
+
     }
 
     // convenience getter for easy access to form fields

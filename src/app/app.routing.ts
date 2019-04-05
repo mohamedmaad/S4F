@@ -5,10 +5,13 @@ import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 import { AuthGuard } from './_guards';
 
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
+    { path:'forgot-password', component: ForgotPasswordComponent },
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
