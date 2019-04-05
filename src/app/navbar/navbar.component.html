@@ -1,0 +1,22 @@
+
+<nav class="navbar navbar-light">
+  <a class="navbar-brand liens" href="home">
+    Street<span>4</span>Fit
+  </a>
+
+
+<div class="form-inline">
+     <a routerLink="/coaches" class="nav-item nav-link text-secondary" >Coaches</a>
+      <a routerLink="/entreprises" class="nav-item nav-link text-secondary" >Entreprises</a>
+      <a routerLink="/seances" class="nav-item nav-link text-secondary" >Séances</a>
+
+      <div class="form-inline my-2 my-lg-0">
+        <input type="text" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
+      </div>
+      <button class="btn btn-outline border my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+      <a routerLink="/profil"><i class="far fa-user-circle icone"></i></a>
+
+      <a class="nav-item nav-link" (click)="logout()">Se déconnecter</a>
+
+      </div>
+    </nav>

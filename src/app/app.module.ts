@@ -1,4 +1,4 @@
-﻿import { NgModule } from '@angular/core'
+﻿﻿import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
@@ -25,6 +25,8 @@ import { AddCoachComponent } from './add-coach/add-coach.component'
 import { AddSessionComponent } from './add-session/add-session.component'
 import { SessionDetailComponent } from './session-detail/session-detail.component'
 import { CompanyDetailComponent } from './company-detail/company-detail.component'
+import { ProfilComponent } from './profil/profil.component'
+import { NavbarComponent } from './navbar/navbar.component'
 import { AddCompanyComponent } from './add-company/add-company.component'
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
@@ -42,7 +44,12 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     AlertComponent,
     HomeComponent,
     LoginComponent,
+<<<<<<< HEAD
     ForgotPasswordComponent,
+=======
+    NavbarComponent,
+    ProfilComponent,
+>>>>>>> d700efdd8974b85ca218b6c2b9f9426968246f1b
     RegisterComponent,
     CompanyComponent,
     CompanyDetailComponent,

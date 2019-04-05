@@ -8,6 +8,10 @@ import { User } from './_models';
 export class AppComponent {
     currentUser: User;
 
+
+      
+
+
     constructor(
         private router: Router,
         private authenticationService: AuthenticationService

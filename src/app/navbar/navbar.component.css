@@ -1,0 +1,32 @@
+.navbar{
+  background-color: #fff;
+}
+a span{
+  color: #ff0000;
+}
+.liens{
+  font-size: 40px;
+  color: #172332;
+}
+.liens:hover{
+  transform: scale(1.1);
+  transition: 0.5s cubic-bezier(0, 3, 0.4, 1);
+  /* color: #ff0000; */
+}
+/*
+.liens:hover span{
+  color: #172332;
+} */
+.form-inline{
+  color: #172332;
+}
+.form-inline .icone{
+  color: #172332a9;
+  font-size: 35px;
+  padding: 5px;
+}
+
+.btn{
+  color: #172332;
+
+}
