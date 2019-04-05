@@ -1,4 +1,4 @@
-﻿﻿import { NgModule } from '@angular/core'
+﻿import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
@@ -44,12 +44,9 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     AlertComponent,
     HomeComponent,
     LoginComponent,
-<<<<<<< HEAD
     ForgotPasswordComponent,
-=======
     NavbarComponent,
     ProfilComponent,
->>>>>>> d700efdd8974b85ca218b6c2b9f9426968246f1b
     RegisterComponent,
     CompanyComponent,
     CompanyDetailComponent,
