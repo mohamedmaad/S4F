@@ -1,26 +1,18 @@
 ﻿<!-- nav -->
 <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
-    <div class="navbar-nav">
-        <a class="nav-item nav-link text-light" routerLink="/">Home</a>
-        <a class="nav-item nav-link text-light" (click)="logout()">Logout</a>
-    </div>
-<!-- <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
   <div class="navbar-nav">
     <a class="nav-item nav-link" routerLink="/">Home</a>
     <a class="nav-item nav-link" (click)="logout()">Logout</a>
   </div>
+</nav>
 
-</nav> -->
 
-<div *ngIf="currentUser">
-  <app-navbar></app-navbar>
-</div>
 <!-- main app container -->
 <!-- i put class="jumbotron" in comment for expend the dashboard page -->
 <div class="jumbotron">
   <div class="container">
-    <div>
-      <div>
+    <div class="row">
+      <div class="w-100">
         <alert></alert>
         <router-outlet></router-outlet>
       </div>
@@ -36,10 +28,10 @@
     <a
       href="http://jasonwatmore.com/post/2018/10/29/angular-7-user-registration-and-login-example-tutorial"
       target="_top"
-      ></a
+      >Angular 7 - User Registration and Login Example & Tutorial</a
     >
   </p>
   <p>
-    <a href="http://jasonwatmore.com" target="_top"></a>
+    <a href="http://jasonwatmore.com" target="_top">JasonWatmore.com</a>
   </p>
 </div>
