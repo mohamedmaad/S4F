@@ -25,8 +25,9 @@ import { AddCoachComponent } from './add-coach/add-coach.component'
 import { AddSessionComponent } from './add-session/add-session.component'
 import { SessionDetailComponent } from './session-detail/session-detail.component'
 import { CompanyDetailComponent } from './company-detail/company-detail.component'
-import { ProfilComponent } from './profil/profil.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { ProfilComponent } from './profil/profil.component'
+import { NavbarComponent } from './navbar/navbar.component'
+import { AddCompanyComponent } from './add-company/add-company.component'
 
 @NgModule({
   imports: [
@@ -47,6 +48,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     RegisterComponent,
     CompanyComponent,
     CompanyDetailComponent,
+    AddCompanyComponent,
     EmployeesComponent,
     CoachesComponent,
     CoachDetailComponent,

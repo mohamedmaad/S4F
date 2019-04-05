@@ -8,6 +8,15 @@ a span{
   font-size: 40px;
   color: #172332;
 }
+.liens:hover{
+  transform: scale(1.1);
+  transition: 0.5s cubic-bezier(0, 3, 0.4, 1);
+  /* color: #ff0000; */
+}
+/*
+.liens:hover span{
+  color: #172332;
+} */
 .form-inline{
   color: #172332;
 }
