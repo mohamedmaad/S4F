@@ -1,0 +1,84 @@
+<form #form="ngForm" (ngSubmit)="submitCompany()" *ngIf="active">
+  <div class="form-group">
+    <label for="name">Nom de l'Entreprise</label>
+    <input
+      type="text"
+      name="Name"
+      required
+      [(ngModel)]="newCompany.name"
+      #name="ngModel"
+      [class.is-invalid]="name.touched && name.invalid"
+      [class.is-valid]="name.valid"
+      class="form-control"
+    />
+  </div>
+  <div class="form-group">
+    <label for="activity">Activité</label>
+    <input
+      type="text"
+      name="activity"
+      required
+      [(ngModel)]="newCompany.activity"
+      #activity="ngModel"
+      [class.is-invalid]="activity.touched && activity.invalid"
+      [class.is-valid]="activity.valid"
+      class="form-control"
+    />
+  </div>
+  <div class="form-group">
+    <label for="employeesNumber">Nombre d'employés</label>
+    <input
+      type="text"
+      name="employeesNumber"
+      required
+      [(ngModel)]="newCompany.employeesNumber"
+      #employeesNumber="ngModel"
+      [class.is-invalid]="employeesNumber.touched && employeesNumber.invalid"
+      [class.is-valid]="employeesNumber.valid"
+      class="form-control"
+    />
+  </div>
+  <div class="form-group">
+    <label for="company">Adresse</label>
+    <input
+      type="text"
+      name="adress"
+      required
+      [(ngModel)]="newCompany.adress"
+      #adress="ngModel"
+      [class.is-invalid]="adress.touched && adress.invalid"
+      [class.is-valid]="adress.valid"
+      class="form-control"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      type="email"
+      name="mail"
+      required
+      [(ngModel)]="newCompany.mail"
+      #mail="ngModel"
+      [class.is-invalid]="mail.touched && mail.invalid"
+      [class.is-valid]="mail.valid"
+      class="form-control"
+    />
+  </div>
+  <div class="form-group">
+    <label for="tel">Téléphone</label>
+    <input
+      type="text"
+      name="tel"
+      [(ngModel)]="newCompany.tel"
+      #tel="ngModel"
+      [class.is-invalid]="tel.touched && tel.invalid"
+      [class.is-valid]="tel.valid"
+      class="form-control"
+    />
+  </div>
+  <br />
+  <button type="submit" [disabled]="form.invalid" class="btn btn-primary">
+    Ajouter l'Entreprise
+  </button>
+</form>

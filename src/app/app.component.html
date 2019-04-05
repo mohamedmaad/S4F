@@ -1,26 +1,44 @@
 ﻿<!-- nav -->
 <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+<<<<<<< HEAD
     <div class="navbar-nav">
         <a class="nav-item nav-link text-light" routerLink="/">Home</a>
         <a class="nav-item nav-link text-light" (click)="logout()">Logout</a>
     </div>
+=======
+  <div class="navbar-nav">
+    <a class="nav-item nav-link" routerLink="/">Home</a>
+    <a class="nav-item nav-link" (click)="logout()">Logout</a>
+  </div>
+>>>>>>> e3056daf8acdeb4dc0109b75e998ed38b23adc89
 </nav>
 
 
 <!-- main app container -->
 <!-- i put class="jumbotron" in comment for expend the dashboard page -->
 <div class="jumbotron">
-    <div class="container-fluid">
-        <div class="row">
-            <!-- I changed this class="col-sm-6 offset-sm-3 to make btnDashboard min center -->
-            <!-- <div class="col-sm-6 offset-sm-3"> -->
-            <div class="col-sm-8 offset-sm-2">
-                <alert></alert>
-                <router-outlet></router-outlet>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="w-100">
+        <alert></alert>
+        <router-outlet></router-outlet>
+      </div>
     </div>
+  </div>
 </div>
 <!-- </div> class="jumbotron"-->
 
 
+<!-- credits -->
+<div class="text-center">
+  <p>
+    <a
+      href="http://jasonwatmore.com/post/2018/10/29/angular-7-user-registration-and-login-example-tutorial"
+      target="_top"
+      >Angular 7 - User Registration and Login Example & Tutorial</a
+    >
+  </p>
+  <p>
+    <a href="http://jasonwatmore.com" target="_top">JasonWatmore.com</a>
+  </p>
+</div>

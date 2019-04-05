@@ -1,0 +1,105 @@
+<form #form="ngForm" (ngSubmit)="submitCoach()" *ngIf="active">
+  <!--<pre>
+    {{ form.valid }}
+    {{ newCoach | json }}
+  </pre>-->
+  <div class="form-group">
+    <label for="firstname">Prénom</label>
+    <input
+      type="text"
+      name="firstName"
+      required
+      [(ngModel)]="newCoach.firstName"
+      #firstName="ngModel"
+      [class.is-invalid]="firstName.touched && firstName.invalid"
+      [class.is-valid]="firstName.valid"
+      class="form-control"
+    />
+  </div>
+  <div class="form-group">
+    <label for="lastName">Nom</label>
+    <input
+      type="text"
+      name="lastName"
+      required
+      [(ngModel)]="newCoach.lastName"
+      #lastName="ngModel"
+      [class.is-invalid]="lastName.touched && lastName.invalid"
+      [class.is-valid]="lastName.valid"
+      class="form-control"
+    />
+  </div>
+  <div class="form-group">
+    <label for="dateofbirth">Date de naissance</label>
+    <input
+      type="date"
+      name="dateOfBirth"
+      required
+      [(ngModel)]="newCoach.dateOfBirth"
+      #dateOfBirth="ngModel"
+      [class.is-invalid]="dateOfBirth.touched && dateOfBirth.invalid"
+      [class.is-valid]="dateOfBirth.valid"
+      class="form-control"
+    />
+  </div>
+  <div class="form-group">
+    <label for="company">Entreprise</label>
+    <input
+      type="text"
+      name="company"
+      required
+      [(ngModel)]="newCoach.company"
+      #company="ngModel"
+      [class.is-invalid]="company.touched && company.invalid"
+      [class.is-valid]="company.valid"
+      class="form-control"
+    />
+  </div>
+  <div class="form-group">
+    <label for="speciality">Spécialité</label>
+    <input
+      type="text"
+      name="speciality"
+      required
+      [(ngModel)]="newCoach.speciality"
+      #speciality="ngModel"
+      [class.is-invalid]="speciality.touched && speciality.invalid"
+      [class.is-valid]="speciality.valid"
+      class="form-control"
+    />
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      type="email"
+      name="email"
+      required
+      [(ngModel)]="newCoach.email"
+      #email="ngModel"
+      [class.is-invalid]="email.touched && email.invalid"
+      [class.is-valid]="email.valid"
+      class="form-control"
+    />
+  </div>
+  <div class="form-group">
+    <label for="tel">Téléphone</label>
+    <input
+      type="text"
+      name="tel"
+      [(ngModel)]="newCoach.tel"
+      #tel="ngModel"
+      [class.is-invalid]="tel.touched && tel.invalid"
+      [class.is-valid]="tel.valid"
+      class="form-control"
+    />
+  </div>
+  <br />
+  <button
+    type="submit"
+    (click)="addCoaches(firstName.value, lastName.value, speciality.value)"
+    [disabled]="form.invalid"
+    class="btn btn-primary"
+  >
+    Ajouter le coach
+  </button>
+</form>

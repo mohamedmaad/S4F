@@ -1,9 +1,15 @@
-﻿import { Routes, RouterModule } from '@angular/router';
+﻿import { Routes, RouterModule } from '@angular/router'
 
-import { HomeComponent } from './home';
-import { LoginComponent } from './login';
-import { RegisterComponent } from './register';
-import { AuthGuard } from './_guards';
+import { HomeComponent } from './home'
+import { LoginComponent } from './login'
+import { RegisterComponent } from './register'
+import { AuthGuard } from './_guards'
+import { CoachesComponent } from '@app/coaches/coaches.component'
+import { CoachDetailComponent } from './coach-detail/coach-detail.component'
+import { SessionsComponent } from './sessions/sessions.component'
+import { SessionDetailComponent } from './session-detail/session-detail.component'
+import { CompanyComponent } from './company/company.component'
+import { CompanyDetailComponent } from './company-detail/company-detail.component'
 
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
@@ -12,9 +18,22 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path:'forgot-password', component: ForgotPasswordComponent },
+  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'coaches', component: CoachesComponent },
+  { path: 'coach/detail/:id', component: CoachDetailComponent },
+  { path: 'coach/add', component: CoachesComponent },
+  { path: 'seances', component: SessionsComponent },
+  { path: 'seances/ajouter', component: SessionsComponent },
+  { path: 'seance/detail/:id', component: SessionDetailComponent },
+  { path: 'seances/remove/:id', component: SessionsComponent },
+  { path: 'entreprises', component: CompanyComponent },
+  { path: 'entreprise/detail-c/:id', component: CompanyDetailComponent },
+  { path: 'entreprise/ajouter', component: CompanyComponent },
 
-    // otherwise redirect to home
-    { path: '**', redirectTo: '' }
-];
+  // otherwise redirect to home
+  { path: '**', redirectTo: '' },
+]
 
-export const routing = RouterModule.forRoot(appRoutes);
+export const routing = RouterModule.forRoot(appRoutes)

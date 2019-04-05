@@ -1,0 +1,21 @@
+<div *ngIf="coach">
+  <h2>
+    {{ coach.firstName | uppercase }}
+    {{ coach.lastName | uppercase }}
+  </h2>
+
+  <div><span>Date de naissance: </span>{{ coach.dateOfBirth }}</div>
+
+  <div><span>Spécialité: </span>{{ coach.speciality }}</div>
+
+  <div><span>Entreprise: </span>{{ coach.company }}</div>
+
+  <div><span>Email: </span>{{ coach.email }}</div>
+
+  <div><span>Téléphone: </span>{{ coach.tel }}</div>
+</div>
+<br />
+
+<div>
+  <button (click)="goBack()">go back</button>
+</div>

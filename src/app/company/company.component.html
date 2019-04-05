@@ -1,0 +1,41 @@
+<div class="d-flex justify-content-between">
+  <div class="w-50">
+    <div class="w-100">
+      <div class="d-flex justify-content-around align-items-center">
+        <h2>Listes des entreprises</h2>
+        <a
+          class="btn btn-secondary"
+          *ngIf="router.url == '/entreprises'"
+          [routerLink]="'/entreprise/ajouter'"
+        >
+          Créer une nouvelle entreprise
+        </a>
+        <a
+          class="btn btn-danger"
+          *ngIf="router.url == '/entreprise/ajouter'"
+          [routerLink]="'/entreprises'"
+        >
+          Retour
+        </a>
+      </div>
+    </div>
+    <div class="row w-50">
+      <div class="w-100">
+        <ul class="company">
+          <li *ngFor="let company of companies">
+            <a routerLink="/entreprise/detail-c/{{ company.id }}">
+              <span class="badge">{{ company.id }}</span> {{ company.name }}
+              {{ company.activity }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <app-add-company
+    class="w-50"
+    *ngIf="router.url == '/entreprise/ajouter'"
+    (companyIsCreate)="addCompanyToList($event)"
+  ></app-add-company>
+</div>
