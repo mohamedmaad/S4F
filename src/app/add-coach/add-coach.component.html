@@ -94,7 +94,12 @@
     />
   </div>
   <br />
-  <button type="submit" [disabled]="form.invalid" class="btn btn-primary">
+  <button
+    type="submit"
+    (click)="addCoaches(firstName.value, lastName.value, speciality.value)"
+    [disabled]="form.invalid"
+    class="btn btn-primary"
+  >
     Ajouter le coach
   </button>
 </form>

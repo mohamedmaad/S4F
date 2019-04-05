@@ -23,7 +23,8 @@ const appRoutes: Routes = [
   { path: 'seance/detail/:id', component: SessionDetailComponent },
   { path: 'seances/remove/:id', component: SessionsComponent },
   { path: 'entreprises', component: CompanyComponent },
-  { path: 'entreprise/detail/:id', component: CompanyDetailComponent },
+  { path: 'entreprise/detail-c/:id', component: CompanyDetailComponent },
+  { path: 'entreprise/ajouter', component: CompanyComponent },
 
   // otherwise redirect to home
   { path: '**', redirectTo: '' },

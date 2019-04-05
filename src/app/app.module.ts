@@ -25,6 +25,7 @@ import { AddCoachComponent } from './add-coach/add-coach.component'
 import { AddSessionComponent } from './add-session/add-session.component'
 import { SessionDetailComponent } from './session-detail/session-detail.component'
 import { CompanyDetailComponent } from './company-detail/company-detail.component'
+import { AddCompanyComponent } from './add-company/add-company.component'
 
 @NgModule({
   imports: [
@@ -43,6 +44,7 @@ import { CompanyDetailComponent } from './company-detail/company-detail.componen
     RegisterComponent,
     CompanyComponent,
     CompanyDetailComponent,
+    AddCompanyComponent,
     EmployeesComponent,
     CoachesComponent,
     CoachDetailComponent,
