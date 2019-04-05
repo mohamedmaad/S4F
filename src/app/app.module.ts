@@ -10,6 +10,7 @@ import { fakeBackendProvider } from './_helpers'
 import { AppComponent } from './app.component'
 import { routing } from './app.routing'
 
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component'
 import { CommonModule } from '@angular/common'
 import { AlertComponent } from './_components'
 import { JwtInterceptor, ErrorInterceptor } from './_helpers'
@@ -28,7 +29,6 @@ import { CompanyDetailComponent } from './company-detail/company-detail.componen
 import { ProfilComponent } from './profil/profil.component'
 import { NavbarComponent } from './navbar/navbar.component'
 import { AddCompanyComponent } from './add-company/add-company.component'
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 @NgModule({
   imports: [
@@ -44,12 +44,9 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     AlertComponent,
     HomeComponent,
     LoginComponent,
-<<<<<<< HEAD
     ForgotPasswordComponent,
-=======
     NavbarComponent,
     ProfilComponent,
->>>>>>> d700efdd8974b85ca218b6c2b9f9426968246f1b
     RegisterComponent,
     CompanyComponent,
     CompanyDetailComponent,
