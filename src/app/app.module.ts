@@ -1,4 +1,4 @@
-﻿import { NgModule } from '@angular/core'
+﻿﻿import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
@@ -23,32 +23,38 @@ import { SessionsComponent } from './sessions/sessions.component'
 import { CoachDetailComponent } from './coach-detail/coach-detail.component'
 import { AddCoachComponent } from './add-coach/add-coach.component'
 import { AddSessionComponent } from './add-session/add-session.component'
-import { SessionDetailComponent } from './session-detail/session-detail.component';
-import { NavbarComponent } from './navbar/navbar.component'
-;
-import { ProfilComponent } from './profil/profil.component'
+import { SessionDetailComponent } from './session-detail/session-detail.component'
+import { CompanyDetailComponent } from './company-detail/company-detail.component'
+import { ProfilComponent } from './profil/profil.component';
+import { NavbarComponent } from './navbar/navbar.component';
+
 @NgModule({
-  imports: [BrowserModule, ReactiveFormsModule, HttpClientModule, routing, FormsModule, CommonModule],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    routing,
+    FormsModule,
+    CommonModule,
+  ],
   declarations: [
     AppComponent,
     AlertComponent,
     HomeComponent,
     LoginComponent,
+    NavbarComponent,
+    ProfilComponent,
     RegisterComponent,
     CompanyComponent,
-    CompanyComponent,
-    CoachesComponent,
+    CompanyDetailComponent,
     EmployeesComponent,
     CoachesComponent,
-    SessionsComponent,
     CoachDetailComponent,
     AddCoachComponent,
-    AddSessionComponent
-,
-    SessionDetailComponent,
-    NavbarComponent
-,
-    ProfilComponent  ],
+    SessionsComponent,
+    AddSessionComponent,
+    SessionDetailComponent,
+  ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

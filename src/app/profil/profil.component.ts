@@ -17,6 +17,11 @@ import { Router } from '@angular/router'
 })
 export class ProfilComponent implements OnInit {
 
+      id = 0;
+      firstName = 'Street4Fit';
+      lastName = 'Startup';
+      speciality = 'Athlétisme';
+
    coaches = COACHES;
 
   constructor(private coachService: CoachService, private router: Router) {}

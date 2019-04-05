@@ -2,9 +2,16 @@
   font-size: 100px;
 }
 a{
-  text-decoration: none;
   text-transform: none;
   padding: 2px;
+  text-decoration: none;
+
+}
+.dropdown{
+  position: absolute;
+}
+ td a{
+  color: #343a40;
 }
 .selected {
   background-color: #cfd8dc !important;
