@@ -96,7 +96,20 @@
   <br />
   <button
     type="submit"
-    (click)="addCoaches(firstName.value, lastName.value, speciality.value)"
+    (click)="
+      addCoach(
+        firstName.value,
+        lastName.value,
+        birthday.value,
+        civility.value,
+        speciality.value,
+        company.value,
+        email.value,
+        tel.value,
+        pictures.value,
+        password.value
+      )
+    "
     [disabled]="form.invalid"
     class="btn btn-primary"
   >

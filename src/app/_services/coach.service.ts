@@ -9,25 +9,50 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root',
 })
 export class CoachService {
-  getCoaches(): Observable<Coach[]> {
-    return of(COACHES)
-  }
-
-  getCoach(id: number): Observable<Coach> {
-    return of(COACHES.find(coach => coach.id === id))
-  }
-
-  uri = 'http://localhost:4000/coaches'
-
   constructor(private http: HttpClient) {}
 
-  addCoach(firstname, lastname, speciality) {
+  // url de test en local
+  URI_TEST = 'http://localhost:4000'
+  // url de test a distance dans un reseau type lan
+  URI_DEV = 'http://10.38.164.208:4000'
+
+  getCoach(id: string) {
+    return this.http.get(`${this.URI_DEV}/coaches/detail/${id}`)
+    // return of(COACHES.find(coach => coach.id === id))
+  }
+
+  // coaches.component ca return tous les coaches de la base de donnees
+  getCoaches() {
+    return this.http.get(`${this.URI_DEV}/coaches`)
+  }
+
+  addCoach(
+    firstname,
+    lastname,
+    birthday,
+    civility,
+    speciality,
+    company,
+    email,
+    tel,
+    pictures,
+    password
+  ) {
     const obj = {
       firstname: firstname,
       lastname: lastname,
+      birthday: birthday,
+      civility: civility,
       speciality: speciality,
+      company: company,
+      email: email,
+      tel: tel,
+      pictures: pictures,
+      password: password,
     }
     console.log(obj)
-    this.http.post(`${this.uri}/add`, obj).subscribe(res => console.log('Done'))
+    this.http
+      .post(`${this.URI_DEV}/add`, obj)
+      .subscribe(res => console.log('Done'))
   }
 }

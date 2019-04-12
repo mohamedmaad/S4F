@@ -10,9 +10,9 @@ import { fakeBackendProvider } from './_helpers'
 import { AppComponent } from './app.component'
 import { routing } from './app.routing'
 
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component'
 import { CommonModule } from '@angular/common'
 import { AlertComponent } from './_components'
-import { JwtInterceptor, ErrorInterceptor } from './_helpers'
 import { HomeComponent } from './home'
 import { LoginComponent } from './login'
 import { RegisterComponent } from './register'
@@ -28,7 +28,8 @@ import { CompanyDetailComponent } from './company-detail/company-detail.componen
 import { ProfilComponent } from './profil/profil.component'
 import { NavbarComponent } from './navbar/navbar.component'
 import { AddCompanyComponent } from './add-company/add-company.component'
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component'
+import { CoachService } from './_services/coach.service'
 
 @NgModule({
   imports: [
@@ -60,11 +61,9 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     SessionDetailComponent,
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-
     // provider used to create fake backend
     fakeBackendProvider,
+    CoachService,
   ],
   bootstrap: [AppComponent],
 })

@@ -11,41 +11,23 @@ import { Router } from '@angular/router'
   styleUrls: ['./coaches.component.css'],
 })
 export class CoachesComponent implements OnInit {
-  /*coach: Coach = {
-    id: 1,
-    firstName: 'Mohamed',
-    lastName: 'Maadnous',
-    dateOfBirth: '17-07-1994',
-    civility: 'Homme',
-    company: 'Street4Fit',
-    speciality: 'JJB',
-    email: 'moh@hotmail.fr',
-    tel: '06989898983',
-    password: 'momo',
-  }
-  coaches = COACHES
-  selectedCoach: Coach*/
-
-  coaches: Coach[]
+  coaches: any
 
   constructor(private coachService: CoachService, private router: Router) {}
+
+  getCoaches() {
+    return this.coachService.getCoaches().subscribe(coaches => {
+      // console.log(coaches)
+      this.coaches = coaches
+    })
+  }
 
   ngOnInit() {
     this.getCoaches()
   }
 
-  getCoaches(): void {
-    this.coachService
-      .getCoaches()
-      .subscribe(coaches => (this.coaches = coaches))
-  }
-
-  /*onSelect(coach: Coach): void {
-    this.selectedCoach = coach
-  }*/
-
   addCoachToList(event: any) {
-    console.log(event)
+    //console.log(event)
 
     const theCoach: Coach = event.theCoach
 

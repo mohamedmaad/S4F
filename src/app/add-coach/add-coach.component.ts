@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core'
 import { Coach } from '@app/_models/coach'
+import { CoachService } from '@app/_services/coach.service'
 
 @Component({
   selector: 'app-add-coach',
@@ -11,7 +12,7 @@ export class AddCoachComponent implements OnInit {
   newCoach: Coach = new Coach()
   active = true
 
-  constructor() {}
+  constructor(private cs: CoachService) {}
 
   ngOnInit() {}
 
@@ -22,5 +23,31 @@ export class AddCoachComponent implements OnInit {
 
     this.active = false
     setTimeout(() => (this.active = true), 0)
+  }
+
+  addCoach(
+    firstname,
+    lastname,
+    birthday,
+    civility,
+    speciality,
+    company,
+    email,
+    tel,
+    pictures,
+    password
+  ) {
+    this.cs.addCoach(
+      firstname,
+      lastname,
+      birthday,
+      civility,
+      speciality,
+      company,
+      email,
+      tel,
+      pictures,
+      password
+    )
   }
 }

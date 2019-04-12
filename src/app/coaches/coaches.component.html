@@ -23,9 +23,10 @@
       <div class="w-100">
         <ul class="coaches">
           <li *ngFor="let coach of coaches">
-            <a routerLink="/coach/detail/{{ coach.id }}">
-              <span class="badge">{{ coach.id }}</span> {{ coach.firstName }}
-              {{ coach.lastName }}
+            <a routerLink="/coach/detail/{{ coach._id }}">
+              <span class="badge"></span>
+              {{ coach.firstname }}
+              {{ coach.lastname }}
             </a>
           </li>
         </ul>

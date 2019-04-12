@@ -1,10 +1,10 @@
-<div *ngIf="coach">
+<div *ngFor="let coach of coach">
   <h2>
-    {{ coach.firstName | uppercase }}
-    {{ coach.lastName | uppercase }}
+    {{ coach.firstname | uppercase }}
+    {{ coach.lastname | uppercase }}
   </h2>
 
-  <div><span>Date de naissance: </span>{{ coach.dateOfBirth }}</div>
+  <div><span>Date de naissance: </span>{{ coach.birthday }}</div>
 
   <div><span>Spécialité: </span>{{ coach.speciality }}</div>
 
