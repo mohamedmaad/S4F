@@ -10,6 +10,7 @@ import { fakeBackendProvider } from './_helpers'
 import { AppComponent } from './app.component'
 import { routing } from './app.routing'
 
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component'
 import { CommonModule } from '@angular/common'
 import { AlertComponent } from './_components'
 import { HomeComponent } from './home'
