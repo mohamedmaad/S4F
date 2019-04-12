@@ -1,36 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
-import { Router } from '@angular/router';
+import { Router } from '@angular/router'
 
-import { AuthenticationService } from '../../app/_services';
-import { User } from '../../app/_models';
-
+import { AuthenticationService } from '../../app/_services'
+import { User } from '../../app/_models'
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  changeText: boolean
 
-  changeText: boolean;
-
-
-  ngOnInit() {
-  }
-  currentUser: User;
+  ngOnInit() {}
+  currentUser: User
 
   constructor(
-      private router: Router,
-      private authenticationService: AuthenticationService
+    private router: Router,
+    private authenticationService: AuthenticationService
   ) {
-      this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
-      this.changeText = false;
+    this.changeText = false
   }
 
   logout() {
-      this.authenticationService.logout();
-      this.router.navigate(['/login']);
+    this.router.navigate(['/login'])
   }
-
 }

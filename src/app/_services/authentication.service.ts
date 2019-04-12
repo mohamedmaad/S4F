@@ -1,42 +1,29 @@
-﻿import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+﻿import { Injectable } from '@angular/core'
+import { HttpClient } from '@angular/common/http'
+import { BehaviorSubject, Observable } from 'rxjs'
 
-import { environment } from '@environments/environment';
-import { User } from '@app/_models';
+import { User } from '@app/_models'
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
-    private currentUserSubject: BehaviorSubject<User>;
-    public currentUser: Observable<User>;
+  constructor(private http: HttpClient) {}
 
-    constructor(private http: HttpClient) {
-        this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
-        this.currentUser = this.currentUserSubject.asObservable();
-    }
+  // on stock la reponse des functions
+  response: object
 
-    public get currentUserValue(): User {
-        return this.currentUserSubject.value;
-    }
+  // url de test en local
+  URI_TEST = 'http://localhost:4000'
+  // url de test a distance dans un reseau type lan
+  URI_DEV = 'http://10.38.164.208:4000'
 
-    login(username: string, password: string) {
-        return this.http.post<any>(`${environment.apiUrl}/users/authenticate`, { username, password })
-            .pipe(map(user => {
-                // login successful if there's a jwt token in the response
-                if (user && user.token) {
-                    // store user details and jwt token in local storage to keep user logged in between page refreshes
-                    localStorage.setItem('currentUser', JSON.stringify(user));
-                    this.currentUserSubject.next(user);
-                }
-
-                return user;
-            }));
-    }
-
-    logout() {
-        // remove user from local storage to log user out
-        localStorage.removeItem('currentUser');
-        this.currentUserSubject.next(null);
-    }
+  // function qui check si user exist dans la bdd grace a api node
+  // reponse avec status et 2 parametres:
+  // -- status :: logged soit error
+  // -- data   :: email envoyer avec la requete
+  login(email: string, pwd: string) {
+    return this.http.post(`${this.URI_DEV}/users/login`, {
+      email: email,
+      password: pwd,
+    })
+  }
 }

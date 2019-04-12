@@ -11,7 +11,7 @@ import { CoachService } from '@app/_services/coach.service'
   styleUrls: ['./coach-detail.component.css'],
 })
 export class CoachDetailComponent implements OnInit {
-  coach: Coach
+  coach: any
 
   constructor(
     private route: ActivatedRoute,
@@ -19,13 +19,15 @@ export class CoachDetailComponent implements OnInit {
     private location: Location
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.getCoach()
   }
 
-  getCoach(): void {
-    const id = +this.route.snapshot.paramMap.get('id')
-    this.coachService.getCoach(id).subscribe(coach => (this.coach = coach))
+  getCoach() {
+    let id = this.route.snapshot.paramMap.get('id')
+    return this.coachService.getCoach(id).subscribe(coach => {
+      this.coach = coach
+    })
   }
 
   goBack(): void {
