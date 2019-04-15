@@ -26,33 +26,12 @@ export class CoachService {
     return this.http.get(`${this.URI_TEST}/coaches`)
   }
 
-  addCoach(
-    firstname,
-    lastname,
-    birthday,
-    civility,
-    speciality,
-    company,
-    email,
-    tel,
-    pictures,
-    password
-  ) {
-    const obj = {
-      firstname: firstname,
-      lastname: lastname,
-      birthday: birthday,
-      civility: civility,
-      speciality: speciality,
-      company: company,
-      email: email,
-      tel: tel,
-      pictures: pictures,
-      password: password,
-    }
-    console.log(obj)
-    this.http
-      .post(`${this.URI_TEST}/add`, { obj: obj })
-      .subscribe(res => console.log('Done'))
+  addCoach(data) {
+    console.log(data)
+    return this.http.post(`${this.URI_TEST}/coaches/add`, data)
+  }
+
+  deleteOne(id: string) {
+    return this.http.post(`${this.URI_TEST}/coaches/delete`, { id })
   }
 }

@@ -1,4 +1,4 @@
-<form #form="ngForm" (ngSubmit)="submitCoach()" *ngIf="active">
+<form #form="ngForm" (ngSubmit)="submitCoach(form)" *ngIf="active">
   <!--<pre>
     {{ form.valid }}
     {{ newCoach | json }}
@@ -94,25 +94,7 @@
     />
   </div>
   <br />
-  <button
-    type="submit"
-    (click)="
-      addCoach(
-        firstName.value,
-        lastName.value,
-        birthday.value,
-        civility.value,
-        speciality.value,
-        company.value,
-        email.value,
-        tel.value,
-        pictures.value,
-        password.value
-      )
-    "
-    [disabled]="form.invalid"
-    class="btn btn-primary"
-  >
+  <button type="submit" [disabled]="form.invalid" class="btn btn-primary">
     Ajouter le coach
   </button>
 </form>

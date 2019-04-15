@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core'
 
 import { Coach } from '@app/_models/coach'
 import { CoachService } from '@app/_services/coach.service'
-import { Router } from '@angular/router'
+import { Router, ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-coaches',
@@ -11,8 +11,13 @@ import { Router } from '@angular/router'
 })
 export class CoachesComponent implements OnInit {
   coaches: any
+  response
 
-  constructor(private coachService: CoachService, private router: Router) {}
+  constructor(
+    private coachService: CoachService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   getCoaches() {
     return this.coachService.getCoaches().subscribe(coaches => {
@@ -21,18 +26,18 @@ export class CoachesComponent implements OnInit {
     })
   }
 
-  ngOnInit() {
-    this.getCoaches()
+  deleteOne(id: string) {
+    this.coachService.deleteOne(id).subscribe(res => {
+      console.log(res)
+      this.response = res as string[]
+      console.log(this.response)
+      if (this.response.status == 'coach deleted') {
+        location.reload()
+      }
+    })
   }
 
-  addCoachToList(event: any) {
-    //console.log(event)
-
-    const theCoach: Coach = event.theCoach
-
-    let id: number = this.coaches.length
-    theCoach.id = id += 1
-
-    this.coaches.push(theCoach)
+  ngOnInit() {
+    this.getCoaches()
   }
 }

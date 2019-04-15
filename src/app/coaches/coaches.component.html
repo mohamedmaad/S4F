@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-between">
+<!-- <div class="d-flex justify-content-between">
   <div class="w-50">
     <div class="w-100">
       <div class="d-flex justify-content-around align-items-center">
@@ -25,8 +25,8 @@
           <li *ngFor="let coach of coaches">
             <a routerLink="/coach/detail/{{ coach._id }}">
               <span class="badge"></span>
-              {{ coach.firstname }}
-              {{ coach.lastname }}
+              {{ coach.firstName }}
+              {{ coach.lastName }}
             </a>
           </li>
         </ul>
@@ -39,4 +39,65 @@
     *ngIf="router.url == '/coach/add'"
     (coachIsCreate)="addCoachToList($event)"
   ></app-add-coach>
+</div> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+      <h2 class="mb-3 h2">Listes des coaches</h2>
+
+      <div class="row">
+        <div class="col-12" *ngFor="let coach of coaches">
+          <a routerLink="/coach/detail/{{ coach._id }}" class="img text-dark">
+            <img
+              src="../../assets/img/47682658_579366792507336_2199209627067875328_n.png"
+              class="rounded-circle w-20 float-left"
+              alt="..."
+            />
+            <h5>
+              {{ coach.firstName }}
+              {{ coach.lastName }}
+            </h5>
+          </a>
+          <p>
+            {{ coach.speciality }}
+            <button
+              type="button"
+              (click)="deleteOne(coach._id)"
+              class="btn text-danger float-right"
+            >
+              <i class="fas fa-trash-alt"></i>
+            </button>
+            <button type="button" class="btn ml-5 offset-8 float-right">
+              <i class="fas fa-pen"></i>
+            </button>
+          </p>
+
+          <hr />
+
+          <div class="col-4"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-sm-12 text-center">
+      <a
+        class="btn btn-secondary offset-md-7 "
+        *ngIf="router.url == '/coaches'"
+        [routerLink]="'/coach/add'"
+      >
+        Créer un nouveau Coach
+      </a>
+
+      <a
+        class="btn btn-danger offset-10"
+        *ngIf="router.url == '/coach/add'"
+        [routerLink]="'/coaches'"
+      >
+        Retour
+      </a>
+
+      <app-add-coach *ngIf="router.url == '/coach/add'"></app-add-coach>
+    </div>
+  </div>
 </div>

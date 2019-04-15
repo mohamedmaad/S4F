@@ -1,12 +1,8 @@
-﻿import { Component, OnInit, Input } from '@angular/core'
-import { Router, ActivatedRoute } from '@angular/router'
+﻿import { Component, OnInit } from '@angular/core'
+import { Router } from '@angular/router'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 
-import { AlertService, AuthenticationService } from '@app/_services'
-import { User } from '@app/_models'
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable'
-import { Location } from '@angular/common'
-import { HttpClient } from '@angular/common/http'
+import { AuthenticationService } from '@app/_services'
 
 @Component({ templateUrl: 'login.component.html' })
 export class LoginComponent implements OnInit {
@@ -18,16 +14,14 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute,
     private router: Router,
-    private authenticationService: AuthenticationService,
-    private location: Location,
-    private http: HttpClient
+    private authenticationService: AuthenticationService
   ) {}
 
   ngOnInit() {
     if (this.connected()) {
       this.router.navigate(['home'])
+      return
     }
 
     this.loginForm = this.formBuilder.group({
@@ -63,7 +57,7 @@ export class LoginComponent implements OnInit {
         this.loginInfo = res as String[]
         console.log(this.loginInfo.data)
         // console.log(this.loginInfo.status)
-        if (this.loginInfo.status == 'logged') {
+        if (this.loginInfo.status == 'loged') {
           localStorage.setItem('user', this.loginInfo.data)
           this.router.navigate(['home'])
         }

@@ -18,7 +18,7 @@ export class AuthenticationService {
   // -- status :: logged soit error
   // -- data   :: email envoyer avec la requete
   login(email: string, pwd: string) {
-    return this.http.post(`${this.URI_DEV}/users/login`, {
+    return this.http.post(`${this.URI_TEST}/users/login`, {
       email: email,
       password: pwd,
     })
@@ -26,6 +26,6 @@ export class AuthenticationService {
 
   register(data) {
     // console.log()
-    return this.http.post(`${this.URI_DEV}/users/register`, data)
+    return this.http.post(`${this.URI_TEST}/users/register`, data)
   }
 }
