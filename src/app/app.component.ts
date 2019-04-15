@@ -1,19 +1,32 @@
-﻿import { Component } from '@angular/core'
-import { Router } from '@angular/router'
+﻿import { Component, OnInit, Input, Output, DoCheck } from '@angular/core'
+import { Router, NavigationEnd } from '@angular/router'
 
-import { AuthenticationService } from './_services'
 import { User } from './_models'
+import { EventEmitter } from 'protractor';
 
 @Component({ selector: 'app', templateUrl: 'app.component.html' })
-export class AppComponent {
+
+export class AppComponent implements OnInit {
   currentUser: User
+  logged = false
+
+  // @Input() logged = false
 
   constructor(
     private router: Router,
-    private authenticationService: AuthenticationService
-  ) {}
-
-  logout() {
-    this.router.navigate(['/login'])
+  ) {
+    this.router.events.subscribe(e => {
+      if(e instanceof NavigationEnd) {
+        if(localStorage.getItem('user')) {
+          this.logged = true
+          console.log("changed")
+        }
+      }
+    })
   }
+
+  ngOnInit() {
+    
+  }
+  
 }

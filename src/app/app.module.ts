@@ -4,18 +4,12 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { FormsModule } from '@angular/forms'
 
-// used to create fake backend
-import { fakeBackendProvider } from './_helpers'
-
 import { AppComponent } from './app.component'
 import { routing } from './app.routing'
 
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component'
 import { CommonModule } from '@angular/common'
 import { AlertComponent } from './_components'
-import { HomeComponent } from './home'
 import { LoginComponent } from './login'
-import { RegisterComponent } from './register'
 import { CompanyComponent } from './company/company.component'
 import { EmployeesComponent } from './employees/employees.component'
 import { CoachesComponent } from './coaches/coaches.component'
@@ -30,6 +24,8 @@ import { NavbarComponent } from './navbar/navbar.component'
 import { AddCompanyComponent } from './add-company/add-company.component'
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component'
 import { CoachService } from './_services/coach.service'
+import { HomeComponent } from './home/home.component';;
+import { RegisterationComponent } from './registeration/registeration.component'
 
 @NgModule({
   imports: [
@@ -43,12 +39,11 @@ import { CoachService } from './_services/coach.service'
   declarations: [
     AppComponent,
     AlertComponent,
-    HomeComponent,
     LoginComponent,
     ForgotPasswordComponent,
     NavbarComponent,
     ProfilComponent,
-    RegisterComponent,
+    RegisterationComponent,
     CompanyComponent,
     CompanyDetailComponent,
     AddCompanyComponent,
@@ -59,10 +54,12 @@ import { CoachService } from './_services/coach.service'
     SessionsComponent,
     AddSessionComponent,
     SessionDetailComponent,
+    HomeComponent
+,
+    RegisterationComponent
   ],
   providers: [
     // provider used to create fake backend
-    fakeBackendProvider,
     CoachService,
   ],
   bootstrap: [AppComponent],

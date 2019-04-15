@@ -1,15 +1,9 @@
 ﻿import { Component, OnInit } from '@angular/core'
-import { Router } from '@angular/router'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
-import { first } from 'rxjs/operators'
 
 import {
-  AlertService,
-  UserService,
   AuthenticationService,
 } from '@app/_services'
-
-import { MustMatch } from '@app/_helpers/must-match.validator'
 
 @Component({ templateUrl: 'register.component.html' })
 export class RegisterComponent implements OnInit {
@@ -19,10 +13,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router,
     private authenticationService: AuthenticationService,
-    private userService: UserService,
-    private alertService: AlertService
   ) {}
 
   ngOnInit() {
@@ -37,7 +28,6 @@ export class RegisterComponent implements OnInit {
         /** confirm Password here */
         confirmPassword: ['', Validators.required],
       },
-      { validator: MustMatch('password', 'confirmPassword') }
     )
   }
 
@@ -50,8 +40,18 @@ export class RegisterComponent implements OnInit {
     this.submitted = true
 
     // stop here if form is invalid
-    if (this.registerForm.invalid) {
+    if (this.registerForm.invalid || this.registerForm.controls.password !== this.registerForm.controls.confirmPassword) {
       return
     }
+    // function qui va communiquer avec le service
+    // this.authRequest(this.registerForm.value)
+
   }
+
+  // authRequest(data) {
+  //   // fournir les donnes au service pour enregistrer l'user
+  //   this.authenticationService.register(data).subscribe(res => {
+  //     console.log(res)
+  //   })
+  // }
 }

@@ -1,8 +1,5 @@
 ﻿import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
-import { BehaviorSubject, Observable } from 'rxjs'
-
-import { User } from '@app/_models'
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
@@ -25,5 +22,10 @@ export class AuthenticationService {
       email: email,
       password: pwd,
     })
+  }
+
+  register(data) {
+    // console.log()
+    return this.http.post(`${this.URI_DEV}/users/register`, data)
   }
 }
