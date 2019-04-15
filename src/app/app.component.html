@@ -5,8 +5,7 @@
     <a class="nav-item nav-link" (click)="logout()">Logout</a>
   </div>
 </nav> -->
-
-<div *ngIf="currentUser">
+<div *ngIf="logged">
     <app-navbar></app-navbar>
   </div>
   <!-- main app container -->
@@ -15,7 +14,7 @@
       <div>
         <div>
           <alert></alert>
-          <router-outlet></router-outlet>
+          <router-outlet (activate)="changeOfRoutes"></router-outlet>
         </div>
       </div>
     </div>

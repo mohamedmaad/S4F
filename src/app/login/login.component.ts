@@ -1,4 +1,4 @@
-﻿import { Component, OnInit } from '@angular/core'
+﻿import { Component, OnInit, Input } from '@angular/core'
 import { Router, ActivatedRoute } from '@angular/router'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     if (this.connected()) {
-      this.location.go('')
+      this.router.navigate(['home'])
     }
 
     this.loginForm = this.formBuilder.group({
@@ -65,7 +65,7 @@ export class LoginComponent implements OnInit {
         // console.log(this.loginInfo.status)
         if (this.loginInfo.status == 'logged') {
           localStorage.setItem('user', this.loginInfo.data)
-          this.location.go('/home')
+          this.router.navigate(['home'])
         }
       })
   }

@@ -1,10 +1,7 @@
 ﻿import { Routes, RouterModule } from '@angular/router'
 
-import { HomeComponent } from './home'
 import { LoginComponent } from './login'
 import { ProfilComponent } from './profil/profil.component'
-import { RegisterComponent } from './register'
-import { AuthGuard } from './_guards'
 import { CoachesComponent } from '@app/coaches/coaches.component'
 import { CoachDetailComponent } from './coach-detail/coach-detail.component'
 import { SessionsComponent } from './sessions/sessions.component'
@@ -12,13 +9,19 @@ import { SessionDetailComponent } from './session-detail/session-detail.componen
 import { CompanyComponent } from './company/company.component'
 import { CompanyDetailComponent } from './company-detail/company-detail.component'
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component'
+import { HomeComponent } from './home/home.component';
+import { RegisterationComponent } from './registeration/registeration.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+  // { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'profil', component: ProfilComponent },
+<<<<<<< HEAD
+=======
+  { path: 'register', component: RegisterationComponent },
+>>>>>>> 5189720a497a0e5ae466cbb6baac960340e2b985
   { path: 'coaches', component: CoachesComponent },
   { path: 'coach/detail/:id', component: CoachDetailComponent },
   { path: 'coach/add', component: CoachesComponent },
