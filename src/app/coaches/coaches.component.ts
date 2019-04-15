@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 
 import { Coach } from '@app/_models/coach'
-//import { COACHES } from '@app/mock/mock-coaches'
 import { CoachService } from '@app/_services/coach.service'
 import { Router } from '@angular/router'
 

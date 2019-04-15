@@ -17,13 +17,13 @@ export class CoachService {
   URI_DEV = 'http://10.38.164.208:4000'
 
   getCoach(id: string) {
-    return this.http.get(`${this.URI_DEV}/coaches/detail/${id}`)
+    return this.http.get(`${this.URI_TEST}/coaches/detail/${id}`)
     // return of(COACHES.find(coach => coach.id === id))
   }
 
   // coaches.component ca return tous les coaches de la base de donnees
   getCoaches() {
-    return this.http.get(`${this.URI_DEV}/coaches`)
+    return this.http.get(`${this.URI_TEST}/coaches`)
   }
 
   addCoach(
@@ -52,7 +52,7 @@ export class CoachService {
     }
     console.log(obj)
     this.http
-      .post(`${this.URI_DEV}/add`, obj)
+      .post(`${this.URI_TEST}/add`, { obj: obj })
       .subscribe(res => console.log('Done'))
   }
 }

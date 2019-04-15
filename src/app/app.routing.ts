@@ -11,7 +11,6 @@ import { SessionsComponent } from './sessions/sessions.component'
 import { SessionDetailComponent } from './session-detail/session-detail.component'
 import { CompanyComponent } from './company/company.component'
 import { CompanyDetailComponent } from './company-detail/company-detail.component'
-
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component'
 
 const appRoutes: Routes = [
@@ -19,13 +18,8 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
-  { path: 'login', component: LoginComponent },
   { path: 'profil', component: ProfilComponent },
-  { path: 'register', component: RegisterComponent },
   { path: 'coaches', component: CoachesComponent },
-  { path: 'detail/:id', component: CoachDetailComponent },
-  { path: 'coaches/add', component: CoachesComponent },
   { path: 'coach/detail/:id', component: CoachDetailComponent },
   { path: 'coach/add', component: CoachesComponent },
   { path: 'seances', component: SessionsComponent },

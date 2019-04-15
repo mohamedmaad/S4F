@@ -25,29 +25,29 @@ export class AddCoachComponent implements OnInit {
     setTimeout(() => (this.active = true), 0)
   }
 
-  addCoach(
-    firstname,
-    lastname,
-    birthday,
-    civility,
-    speciality,
-    company,
-    email,
-    tel,
-    pictures,
-    password
-  ) {
-    this.cs.addCoach(
-      firstname,
-      lastname,
-      birthday,
-      civility,
-      speciality,
-      company,
-      email,
-      tel,
-      pictures,
-      password
-    )
-  }
+  //   addCoach(
+  //     firstname,
+  //     lastname,
+  //     birthday,
+  //     civility,
+  //     speciality,
+  //     company,
+  //     email,
+  //     tel,
+  //     pictures,
+  //     password
+  //   ) {
+  //     this.cs.addCoach(
+  //       firstname,
+  //       lastname,
+  //       birthday,
+  //       civility,
+  //       speciality,
+  //       company,
+  //       email,
+  //       tel,
+  //       pictures,
+  //       password
+  //     )
+  //   }
 }
