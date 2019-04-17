@@ -4,6 +4,7 @@
   <div class="col-md-6 offset-3">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
+        <div *ngIf="connectionError"><p class="text-center text-danger">Identifiant ou mot de passe incorrects</p></div>
         <label for="email" class="text-secondary">Pseudo</label>
         <input
           type="text"

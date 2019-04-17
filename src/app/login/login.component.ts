@@ -11,6 +11,7 @@ export class LoginComponent implements OnInit {
   submitted = false
   returnUrl: string
   loginInfo
+  connectionError: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -60,6 +61,9 @@ export class LoginComponent implements OnInit {
         if (this.loginInfo.status == 'loged') {
           localStorage.setItem('user', this.loginInfo.data)
           this.router.navigate(['home'])
+        } else {
+          console.log('error de connexion')
+          this.connectionError = true
         }
       })
   }

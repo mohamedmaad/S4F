@@ -13,7 +13,7 @@ export class RegisterationComponent implements OnInit {
   loading = false
   submitted = false
   response
-  notSame = true
+  notSame = false
 
   constructor(
     private formBuilder: FormBuilder,
@@ -23,10 +23,10 @@ export class RegisterationComponent implements OnInit {
 
   checkPasswords(f: FormGroup) {
     // here we have the 'passwords' group
-    let pass = f.controls.password
-    let confirmPass = f.controls.confirmPassword
+    let pass = f.controls.password.value
+    let confirmPass = f.controls.confirmPassword.value
 
-    return pass === confirmPass ? null : { notSame: true }
+    return pass === confirmPass ?  { notSame: false } : { notSame: true }
   }
 
   ngOnInit() {
@@ -56,7 +56,6 @@ export class RegisterationComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true
-    this.notSame = this.registerForm.errors.notSame
     // stop here if form is invalid
     // if (this.registerForm.invalid) {
     //   if (this.f.password.value !== this.f.confirmPassword.value) {
@@ -66,9 +65,10 @@ export class RegisterationComponent implements OnInit {
     // }
     // console.log('after')
     // function qui va communiquer avec le service
+    this.notSame = this.registerForm.errors.notSame
 
-    if (this.registerForm.invalid) {
-      console.log(this.registerForm.errors)
+    if (this.registerForm.invalid && this.notSame == true) {
+      console.log(this.f.confirmPassword)
       console.log(this.registerForm.errors.notSame)
       return
     }

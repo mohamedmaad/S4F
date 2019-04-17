@@ -90,19 +90,17 @@
           type="password"
           formControlName="confirmPassword"
           class="form-control"
-          [ngClass]="{
-            'is-invalid': submitted
-          }"
+          [ngClass]="{'is-invalid': submitted && f.confirmPassword.errors || notSame}"
         />
         <div class="invalid-feedback">
           <div
             *ngIf="
-              f.confirmPassword.errors && f.confirmPassword.errors.required
+              submitted && f.confirmPassword.value == ''
             "
           >
             Veuillez confirmer votre mot passe
           </div>
-          <div *ngIf="notSame">
+          <div *ngIf="submitted && notSame">
             Votre mot passe doit être identique
           </div>
         </div>
