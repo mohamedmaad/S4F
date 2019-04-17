@@ -9,7 +9,7 @@
       type="text"
       name="firstName"
       required
-      [(ngModel)]="newCoach.firstName"
+      [(ngModel)]="form.firstName"
       #firstName="ngModel"
       [class.is-invalid]="firstName.touched && firstName.invalid"
       [class.is-valid]="firstName.valid"
@@ -22,7 +22,7 @@
       type="text"
       name="lastName"
       required
-      [(ngModel)]="newCoach.lastName"
+      [(ngModel)]="form.lastName"
       #lastName="ngModel"
       [class.is-invalid]="lastName.touched && lastName.invalid"
       [class.is-valid]="lastName.valid"
@@ -35,7 +35,7 @@
       type="date"
       name="dateOfBirth"
       required
-      [(ngModel)]="newCoach.dateOfBirth"
+      [(ngModel)]="form.dateOfBirth"
       #dateOfBirth="ngModel"
       [class.is-invalid]="dateOfBirth.touched && dateOfBirth.invalid"
       [class.is-valid]="dateOfBirth.valid"
@@ -48,7 +48,7 @@
       type="text"
       name="company"
       required
-      [(ngModel)]="newCoach.company"
+      [(ngModel)]="form.company"
       #company="ngModel"
       [class.is-invalid]="company.touched && company.invalid"
       [class.is-valid]="company.valid"
@@ -61,7 +61,7 @@
       type="text"
       name="speciality"
       required
-      [(ngModel)]="newCoach.speciality"
+      [(ngModel)]="form.speciality"
       #speciality="ngModel"
       [class.is-invalid]="speciality.touched && speciality.invalid"
       [class.is-valid]="speciality.valid"
@@ -74,7 +74,7 @@
       type="email"
       name="email"
       required
-      [(ngModel)]="newCoach.email"
+      [(ngModel)]="form.email"
       #email="ngModel"
       [class.is-invalid]="email.touched && email.invalid"
       [class.is-valid]="email.valid"
@@ -86,7 +86,7 @@
     <input
       type="text"
       name="tel"
-      [(ngModel)]="newCoach.tel"
+      [(ngModel)]="form.tel"
       #tel="ngModel"
       [class.is-invalid]="tel.touched && tel.invalid"
       [class.is-valid]="tel.valid"

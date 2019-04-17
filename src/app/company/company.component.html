@@ -1,41 +1,60 @@
-<div class="d-flex justify-content-between">
-  <div class="w-50">
-    <div class="w-100">
-      <div class="d-flex justify-content-around align-items-center">
-        <h2>Listes des entreprises</h2>
-        <a
-          class="btn btn-secondary"
-          *ngIf="router.url == '/entreprises'"
-          [routerLink]="'/entreprise/ajouter'"
-        >
-          Créer une nouvelle entreprise
-        </a>
-        <a
-          class="btn btn-danger"
-          *ngIf="router.url == '/entreprise/ajouter'"
-          [routerLink]="'/entreprises'"
-        >
-          Retour
-        </a>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-sm-12  text-dark">
+      <h2 class="mb-3 h2">Listes des entreprises</h2>
+      <div class="row">
+        <div class="col-12 " *ngFor="let company of companies">
+          <a
+            routerLink="/entreprise/detail-c/{{ company._id }}"
+            class="img text-dark"
+          >
+            <img
+              src="../../assets/img/47682658_579366792507336_2199209627067875328_n.png"
+              class="rounded-circle w-20 float-left"
+              alt="..."
+            />
+            <h5>
+              {{ company.name }}
+            </h5>
+          </a>
+          <p>
+            {{ company.activity }}
+            <button
+              type="button"
+              class="btn text-danger float-right"
+              (click)="deleteOne(company._id)"
+            >
+              <i class="fas fa-trash-alt"></i>
+            </button>
+            <button type="button" class="btn ml-5 offset-8 float-right">
+              <i class="fas fa-pen"></i>
+            </button>
+          </p>
+          <hr />
+          <!-- <div class="col-4"></div> -->
+        </div>
       </div>
     </div>
-    <div class="row w-50">
-      <div class="w-100">
-        <ul class="company">
-          <li *ngFor="let company of companies">
-            <a routerLink="/entreprise/detail-c/{{ company.id }}">
-              <span class="badge">{{ company.id }}</span> {{ company.name }}
-              {{ company.activity }}
-            </a>
-          </li>
-        </ul>
-      </div>
+
+    <div class="col-md-6 col-sm-12 text-center">
+      <a
+        class="btn btn-secondary offset-md-6"
+        *ngIf="router.url == '/entreprises'"
+        [routerLink]="'/entreprise/ajouter'"
+      >
+        Créer une nouvelle entreprise
+      </a>
+      <a
+        class="btn btn-danger offset-10"
+        *ngIf="router.url == '/entreprise/ajouter'"
+        [routerLink]="'/entreprises'"
+      >
+        Retour
+      </a>
+
+      <app-add-company
+        *ngIf="router.url == '/entreprise/ajouter'"
+      ></app-add-company>
     </div>
   </div>
-
-  <app-add-company
-    class="w-50"
-    *ngIf="router.url == '/entreprise/ajouter'"
-    (companyIsCreate)="addCompanyToList($event)"
-  ></app-add-company>
 </div>

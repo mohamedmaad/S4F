@@ -1,18 +1,16 @@
-<div *ngIf="companies"></div>
+<div *ngFor="let company of companies">
+  <h2>{{ company.name | uppercase }}</h2>
 
-<h2>{{ company.name | uppercase }} Details</h2>
+  <div><span>Secteur d'activité: </span>{{ company.activity }}</div>
 
-<div><span>Nom: </span>{{ company.name }}</div>
+  <div><span>Nombre de salariés: </span>{{ company.employees }}</div>
 
-<div><span>Secteur d'activité: </span>{{ company.activity }}</div>
+  <div><span>Adresse: </span>{{ company.adress }}</div>
 
-<div><span>Nombre de salariés: </span>{{ company.employeesNumber }}</div>
+  <div><span>Email: </span>{{ company.email }}</div>
 
-<div><span>Adresse: </span>{{ company.adress }}</div>
-
-<div><span>Email: </span>{{ company.mail }}</div>
-
-<div><span>Téléphone: </span>{{ company.tel }}</div>
+  <div><span>Téléphone: </span>{{ company.tel }}</div>
+</div>
 
 <div>
   <button (click)="goBack()">go back</button>

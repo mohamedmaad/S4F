@@ -26,11 +26,13 @@ export class CoachService {
     return this.http.get(`${this.URI_TEST}/coaches`)
   }
 
+  // ajout d'un coach dans ma bdd
   addCoach(data) {
     console.log(data)
     return this.http.post(`${this.URI_TEST}/coaches/add`, data)
   }
 
+  // suppression d'un coach dans ma bdd
   deleteOne(id: string) {
     return this.http.post(`${this.URI_TEST}/coaches/delete`, { id })
   }

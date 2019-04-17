@@ -19,6 +19,7 @@ export class CoachesComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
+  // récupération de la liste des coaches
   getCoaches() {
     return this.coachService.getCoaches().subscribe(coaches => {
       // console.log(coaches)
@@ -26,11 +27,13 @@ export class CoachesComponent implements OnInit {
     })
   }
 
+  // suppression d'un coach
   deleteOne(id: string) {
     this.coachService.deleteOne(id).subscribe(res => {
       console.log(res)
       this.response = res as string[]
       console.log(this.response)
+      //recharge de la page automatiquement à la suppression d'un coach
       if (this.response.status == 'coach deleted') {
         location.reload()
       }

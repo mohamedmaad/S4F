@@ -7,10 +7,10 @@ import { CompanyService } from '@app/_services/company.service'
 @Component({
   selector: 'app-company-detail',
   templateUrl: './company-detail.component.html',
-  styleUrls: ['./company-detail.component.css']
+  styleUrls: ['./company-detail.component.css'],
 })
 export class CompanyDetailComponent implements OnInit {
-  company : Company
+  companies: any
 
   constructor(
     private route: ActivatedRoute,
@@ -18,13 +18,15 @@ export class CompanyDetailComponent implements OnInit {
     private location: Location
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.getCompany()
   }
 
-  getCompany(): void {
-    const id = +this.route.snapshot.paramMap.get('id')
-    this.companyService.getCompany(id).subscribe(company => (this.company = company))
+  getCompany() {
+    const id = this.route.snapshot.paramMap.get('id')
+    return this.companyService
+      .getCompany(id)
+      .subscribe(company => (this.companies = company))
   }
 
   goBack(): void {

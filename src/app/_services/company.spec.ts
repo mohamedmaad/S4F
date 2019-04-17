@@ -1,12 +1,12 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing'
 
-import { CompaniesService } from './company.service';
+import { CompanyService } from './company.service'
 
 describe('CoachService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  beforeEach(() => TestBed.configureTestingModule({}))
 
   it('should be created', () => {
-    const service: CompaniesService = TestBed.get(CompaniesService);
-    expect(service).toBeTruthy();
-  });
-});
+    const service: CompanyService = TestBed.get(CompanyService)
+    expect(service).toBeTruthy()
+  })
+})

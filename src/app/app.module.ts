@@ -24,8 +24,9 @@ import { NavbarComponent } from './navbar/navbar.component'
 import { AddCompanyComponent } from './add-company/add-company.component'
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component'
 import { CoachService } from './_services/coach.service'
-import { HomeComponent } from './home/home.component';;
+import { HomeComponent } from './home/home.component'
 import { RegisterationComponent } from './registeration/registeration.component'
+import { CompanyService } from './_services/company.service'
 
 @NgModule({
   imports: [
@@ -54,14 +55,10 @@ import { RegisterationComponent } from './registeration/registeration.component'
     SessionsComponent,
     AddSessionComponent,
     SessionDetailComponent,
-    HomeComponent
-,
-    RegisterationComponent
+    HomeComponent,
+    RegisterationComponent,
   ],
-  providers: [
-    // provider used to create fake backend
-    CoachService,
-  ],
+  providers: [CoachService, CompanyService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,14 +1,12 @@
-<form #form="ngForm" (ngSubmit)="submitCompany()" *ngIf="active">
+<form #form="ngForm" (ngSubmit)="submitCompany(form)" *ngIf="active">
   <div class="form-group">
     <label for="name">Nom de l'Entreprise</label>
     <input
       type="text"
-      name="Name"
+      name="name"
       required
-      [(ngModel)]="newCompany.name"
+      [(ngModel)]="form.name"
       #name="ngModel"
-      [class.is-invalid]="name.touched && name.invalid"
-      [class.is-valid]="name.valid"
       class="form-control"
     />
   </div>
@@ -18,23 +16,19 @@
       type="text"
       name="activity"
       required
-      [(ngModel)]="newCompany.activity"
+      [(ngModel)]="form.activity"
       #activity="ngModel"
-      [class.is-invalid]="activity.touched && activity.invalid"
-      [class.is-valid]="activity.valid"
       class="form-control"
     />
   </div>
   <div class="form-group">
-    <label for="employeesNumber">Nombre d'employés</label>
+    <label for="employees">Nombre d'employés</label>
     <input
       type="text"
-      name="employeesNumber"
+      name="employees"
       required
-      [(ngModel)]="newCompany.employeesNumber"
-      #employeesNumber="ngModel"
-      [class.is-invalid]="employeesNumber.touched && employeesNumber.invalid"
-      [class.is-valid]="employeesNumber.valid"
+      [(ngModel)]="form.employees"
+      #employees="ngModel"
       class="form-control"
     />
   </div>
@@ -42,12 +36,10 @@
     <label for="company">Adresse</label>
     <input
       type="text"
-      name="adress"
+      name="address"
       required
-      [(ngModel)]="newCompany.adress"
+      [(ngModel)]="form.address"
       #adress="ngModel"
-      [class.is-invalid]="adress.touched && adress.invalid"
-      [class.is-valid]="adress.valid"
       class="form-control"
     />
   </div>
@@ -56,12 +48,10 @@
     <label for="email">Email</label>
     <input
       type="email"
-      name="mail"
+      name="email"
       required
-      [(ngModel)]="newCompany.mail"
-      #mail="ngModel"
-      [class.is-invalid]="mail.touched && mail.invalid"
-      [class.is-valid]="mail.valid"
+      [(ngModel)]="form.email"
+      #email="ngModel"
       class="form-control"
     />
   </div>
@@ -70,10 +60,8 @@
     <input
       type="text"
       name="tel"
-      [(ngModel)]="newCompany.tel"
+      [(ngModel)]="form.tel"
       #tel="ngModel"
-      [class.is-invalid]="tel.touched && tel.invalid"
-      [class.is-valid]="tel.valid"
       class="form-control"
     />
   </div>

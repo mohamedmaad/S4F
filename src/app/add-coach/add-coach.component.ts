@@ -1,5 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core'
-import { Coach } from '@app/_models/coach'
+import { Component, OnInit } from '@angular/core'
 import { CoachService } from '@app/_services/coach.service'
 import { Router } from '@angular/router'
 
@@ -9,8 +8,6 @@ import { Router } from '@angular/router'
   styleUrls: ['./add-coach.component.css'],
 })
 export class AddCoachComponent implements OnInit {
-  @Output() coachIsCreate = new EventEmitter()
-  newCoach: Coach = new Coach()
   active = true
   response
 
@@ -32,30 +29,4 @@ export class AddCoachComponent implements OnInit {
       }
     })
   }
-
-  //   addCoach(
-  //     firstname,
-  //     lastname,
-  //     birthday,
-  //     civility,
-  //     speciality,
-  //     company,
-  //     email,
-  //     tel,
-  //     pictures,
-  //     password
-  //   ) {
-  //     this.cs.addCoach(
-  //       firstname,
-  //       lastname,
-  //       birthday,
-  //       civility,
-  //       speciality,
-  //       company,
-  //       email,
-  //       tel,
-  //       pictures,
-  //       password
-  //     )
-  //   }
 }

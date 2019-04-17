@@ -1,26 +1,31 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { Company } from '@app/_models/company';
+import { Component, OnInit } from '@angular/core'
+import { CompanyService } from '@app/_services/company.service'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-add-company',
   templateUrl: './add-company.component.html',
-  styleUrls: ['./add-company.component.css']
+  styleUrls: ['./add-company.component.css'],
 })
 export class AddCompanyComponent implements OnInit {
-  @Output() companyIsCreate = new EventEmitter()
-  newCompany: Company = new Company()
   active = true
+  response
 
-  constructor() {}
+  constructor(private cs: CompanyService, private router: Router) {}
 
   ngOnInit() {}
 
-  submitCompany(){
-    this.companyIsCreate.emit({ theCompany: this.newCompany })
+  submitCompany(f) {
+    console.log(f.value)
+    this.addCompany(f.value)
+  }
 
-    this.newCompany = new Company()
-
-    this.active = false
-    setTimeout(() => (this.active = true), 0)
+  addCompany(data) {
+    this.cs.addCompany(data).subscribe(res => {
+      this.response = res as string[]
+      if (this.response.status == 'company saved') {
+        this.router.navigate(['entreprises'])
+      }
+    })
   }
 }

@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 
 import { Company } from '@app/_models/company.ts'
-
 import { CompanyService } from '@app/_services/company.service'
-import { Router } from '@angular/router'
+import { Router, ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-company',
@@ -11,38 +10,33 @@ import { Router } from '@angular/router'
   styleUrls: ['./company.component.css'],
 })
 export class CompanyComponent implements OnInit {
-  // company: Company = {
-  //   id: 1,
-  //   name: 'Renault',
-  //   activity: 'Automobile',
-  //   employeesNumber: 10000,
-  //   adress: '100 rue de la paix',
-  //   mail: 'info@renault.fr',
-  //   tel: '0798989898',
-  // }
+  companies: any
+  response
 
-  companies: Company[]
+  constructor(
+    private companyService: CompanyService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
+  getCompanies() {
+    return this.companyService.getCompanies().subscribe(companies => {
+      this.companies = companies
+    })
+  }
 
-  constructor(private companyService: CompanyService, private router: Router) {}
-
+  // suppression d'une entreprise
+  deleteOne(id: string) {
+    this.companyService.deleteOne(id).subscribe(res => {
+      console.log(res)
+      this.response = res as string[]
+      console.log(this.response)
+      //recharge de la page automatiquement à la suppression d'une entreprise
+      if (this.response.status == 'company deleted') {
+        location.reload()
+      }
+    })
+  }
   ngOnInit() {
     this.getCompanies()
-  }
-
-  getCompanies(): void {
-    this.companyService
-      .getCompanies()
-      .subscribe(companies => (this.companies = companies))
-  }
-
-  addCompanyToList(event: any) {
-    console.log(event)
-
-    const theCompany: Company = event.theCompany
-
-    let id: number = this.companies.length
-    theCompany.id = id += 1
-
-    this.companies.push(theCompany)
   }
 }
