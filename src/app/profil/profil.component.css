@@ -1,16 +1,15 @@
-.profil{
+.profil {
   font-size: 100px;
 }
-a{
+a {
   text-transform: none;
   padding: 2px;
   text-decoration: none;
-
 }
-.dropdown{
+.dropdown {
   position: absolute;
 }
- td a{
+td a {
   color: #343a40;
 }
 .selected {
@@ -59,4 +58,19 @@ a{
   height: 1.8em;
   margin-right: 0.8em;
   border-radius: 4px 0 0 4px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 576px) {
+  img {
+    width: 100px;
+    height: 100px;
+  }
+  .h2 {
+    font-size: 1rem;
+  }
+}
+/* IPAD LAPTOP */
+@media (min-width: 768px) {
+  /*- ACCEUIL- */
 }

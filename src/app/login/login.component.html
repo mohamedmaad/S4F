@@ -1,11 +1,15 @@
-﻿<h2 style="text-align:center" class="text-secondary">Identifiez-vous</h2>
+﻿<h2 class="text-secondary mt-5">Identifiez-vous</h2>
 
 <div class="row">
-  <div class="col-md-6 offset-3">
+  <div class="col-md-6 offset-3 mediacol">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <div *ngIf="connectionError"><p class="text-center text-danger">Identifiant ou mot de passe incorrects</p></div>
-        <label for="email" class="text-secondary">Pseudo</label>
+        <div *ngIf="connectionError">
+          <p class="text-center text-danger">
+            Identifiant ou mot de passe incorrects
+          </p>
+        </div>
+        <label for="email" class="text-secondary">Email</label>
         <input
           type="text"
           formControlName="email"
@@ -13,7 +17,7 @@
           [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
         />
         <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-          <div *ngIf="f.email.errors.required">email is required</div>
+          <div *ngIf="f.email.errors.required">Email obligatoire</div>
         </div>
       </div>
       <div class="form-group">
@@ -25,11 +29,11 @@
           [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
         />
         <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-          <div *ngIf="f.password.errors.required">Password is required</div>
+          <div *ngIf="f.password.errors.required">Mot de passe obligatoire</div>
         </div>
       </div>
       <div class="form-group">
-        <button [disabled]="loading" class="btn btn-danger">
+        <button [disabled]="loading" class="btn btn-primary">
           Se connecter
         </button>
         <img
@@ -40,7 +44,7 @@
         <a routerLink="/register" class="btn btn-link">Inscrivez-Vous</a>
       </div>
     </form>
-    <a class="col-md-4 offset-4" routerLink="/forgot-password"
+    <a class="col-md-4 offset-md-4" routerLink="/forgot-password"
       >Mot de passe oublié?</a
     >
   </div>

@@ -4,14 +4,17 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 
 import { AuthenticationService } from '@app/_services'
 
-@Component({ templateUrl: 'login.component.html' })
+@Component({
+  templateUrl: 'login.component.html',
+  styleUrls: ['./login.component.css'],
+})
 export class LoginComponent implements OnInit {
   loginForm: FormGroup
   loading = false
   submitted = false
   returnUrl: string
   loginInfo
-  connectionError: boolean = false;
+  connectionError: boolean = false
 
   constructor(
     private formBuilder: FormBuilder,
