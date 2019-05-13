@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core'
-
-import { Company } from '@app/_models/company'
 import { Observable, of } from 'rxjs'
 import { HttpClient } from '@angular/common/http'
 

@@ -1,11 +1,9 @@
-import { Component, OnInit, EventEmitter } from '@angular/core'
-import { COMPANIES } from '@app/mock/mock-companies'
-import { Router } from '@angular/router'
-import { Session } from '@app/_models/session'
+import { Component, OnInit } from '@angular/core'
+import { Router, ActivatedRoute } from '@angular/router'
 import { SessionService } from '@app/_services/session.service'
 import { CoachService } from '@app/_services/coach.service'
-import { Coach } from '@app/_models/coach'
-import { NgForm } from '@angular/forms'
+// import { NgForm } from '@angular/forms'
+import { CompanyService } from '@app/_services/company.service'
 
 @Component({
   selector: 'app-add-session',
@@ -13,50 +11,61 @@ import { NgForm } from '@angular/forms'
   styleUrls: ['./add-session.component.css'],
 })
 export class AddSessionComponent implements OnInit {
-  session: Session[]
   coaches: any
   today: string
   time: string
-  // companies: Company[];
+  companies: any
+  response
+
   constructor(
     private _router: Router,
+    private router: ActivatedRoute,
     private sessionService: SessionService,
-    private coachService: CoachService // private companyService: CompanyService,
+    private coachService: CoachService,
+    private companyService: CompanyService
   ) {}
 
-  getSession(): void {
-    this.sessionService
-      .getSessions()
-      .subscribe(session => (this.session = session))
+  // récupération de la liste des coaches
+  getCoaches() {
+    return this.coachService.getCoaches().subscribe(coaches => {
+      // console.log(coaches)
+      this.coaches = coaches
+    })
   }
 
-  getCoaches(): void {
-    this.coachService.getCoaches().subscribe(coach => (this.coaches = coach))
+  // récupération des entreprises
+  getCompanies() {
+    return this.companyService.getCompanies().subscribe(companies => {
+      this.companies = companies
+    })
   }
 
-  getCompany(): void {
-    this.sessionService
-      .getSessions()
-      .subscribe(session => (this.session = session))
-  }
-
-  companies = COMPANIES
   ngOnInit() {
     this.getCoaches()
-    this.getSession()
-    // this.companies = COMPANIES;
-
+    this.getCompanies()
+    //this.getSession()
     this.today = new Date().toISOString().split('T')[0]
     this.time = new Date()
       .toISOString()
       .split('T')[1]
-      .split('.')[0]
+      .split('')[0]
       .slice(0, -3)
     console.log(this.time)
   }
 
-  onSubmit(f: NgForm) {
+  onSubmit(f) {
     console.log(f.value)
-    console.log(f.reset()) // false
+    //console.log(f.reset()) // false
+    this.addSession(f.value)
+  }
+
+  // ajout d'une séance
+  addSession(data) {
+    this.sessionService.addSession(data).subscribe(res => {
+      this.response = res as string[]
+      if (this.response.status == 'session saved') {
+        this._router.navigate(['seances'])
+      }
+    })
   }
 }

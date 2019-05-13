@@ -1,19 +1,26 @@
-<div *ngIf="session">
-    <h2>
-      {{ "séance" | uppercase }}
-      {{ session.id }} Details
-    </h2>
-  
-    <div><span>Coach: </span>{{ session.coach }}</div>
-    <div><span>Date: </span>{{ session.date }}</div>
-    <div><span>Entreprise: </span>{{ session.company }}</div>
-    <div><span>Heure: </span>{{ session.hour }}</div>
-    <div><span>Duration: </span>{{ session.duration }}</div>
-    <div><span>Nombre de participants: </span>{{ session.minParticipants }}</div>
-    <div><span>Nombre de participants total: </span>{{ session.maxParticipants }}</div>
-  </div>
-  <br />
+<div *ngFor="let sessions of sessions">
+  <h2>
+    {{ 'séance' | uppercase }}
+  </h2>
+
+  <div><span>Coach: </span>{{ sessions.coach }}</div>
+
+  <div><span>Entreprise: </span>{{ sessions.company }}</div>
+
+  <div><span>Date: </span>{{ sessions.date | date: 'dd-MM-yyyy' }}</div>
+
+  <div><span>Heure: </span>{{ sessions.timeSession }}</div>
+
+  <div><span>Durée: </span>{{ sessions.duration }}</div>
   <div>
-    <button (click)="goBack()" class="btn btn-success">Retour</button>
+    <span>Nombre de participants minimum: </span>{{ sessions.minParticipant }}
   </div>
-  
+  <div>
+    <span>Nombre de participants maximum: </span>{{ sessions.maxParticipant }}
+  </div>
+</div>
+<br />
+
+<div>
+  <button (click)="goBack()" class="btn btn-dark">Retour</button>
+</div>

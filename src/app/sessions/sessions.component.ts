@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core'
-import { Router } from '@angular/router';
-import { Session } from '@app/_models/session';
-import { SessionService } from '../_services/session.service';
+import { SessionService } from '../_services/session.service'
+import { Router, ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-sessions',
@@ -9,25 +8,35 @@ import { SessionService } from '../_services/session.service';
   styleUrls: ['./sessions.component.css'],
 })
 export class SessionsComponent implements OnInit {
-  // session: Session = {
-  //   company: 'Renault',
-  //   coach: 'Mohamed',
-  //   date: '15/05/2019',
-  //   hour: '12H30',
-  //   duration: '1h30',
-  //   maxParticipants: 30,
-  //   minParticipants: 20,
-  // }
+  sessions: any
+  response
 
-  session: Session[];
+  constructor(
+    private sessionService: SessionService,
+    private _router: Router,
+    private route: ActivatedRoute
+  ) {}
 
-  getSession(): void{
-    this.sessionService.getSessions().subscribe(session => this.session = session);
+  getSessions() {
+    return this.sessionService.getSessions().subscribe(sessions => {
+      this.sessions = sessions
+    })
   }
 
-  constructor(private _router: Router, private sessionService: SessionService) {}
-  
+  // suppression d'une seance
+  deleteOne(id: string) {
+    this.sessionService.deleteOne(id).subscribe(res => {
+      console.log(res)
+      this.response = res as string[]
+      //console.log(this.response)
+      //recharge de la page automatiquement à la suppression d'une seance
+      if ((this.response.status = 'session deleted')) {
+        location.reload()
+      }
+    })
+  }
+
   ngOnInit() {
-    this.getSession();
+    this.getSessions()
   }
 }

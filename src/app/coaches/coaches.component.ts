@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core'
-
-import { Coach } from '@app/_models/coach'
 import { CoachService } from '@app/_services/coach.service'
 import { Router, ActivatedRoute } from '@angular/router'
 

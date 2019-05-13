@@ -1,0 +1,71 @@
+.selected {
+  background-color: #cfd8dc !important;
+  color: white;
+}
+.session {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+/* .session li {
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    background-color: #eee;
+    margin: 0.5em;
+    padding: 0.3em 0;
+    height: 1.8em;
+    border-radius: 4px;
+  }
+  .session li.selected:hover {
+    background-color: #bbd8dc !important;
+    color: white;
+  }
+  .session li:hover {
+    color: #607d8b;
+    background-color: #ddd;
+    left: 0.1em;
+  } */
+.session .text {
+  position: relative;
+  top: -3px;
+}
+.session .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #343a40;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: 0.8em;
+  border-radius: 4px 0 0 4px;
+}
+
+/* ------------------ */
+
+.img img {
+  width: 45px;
+  height: 50px;
+  margin-right: 10px;
+}
+.session a {
+  display: block;
+  transform: none;
+  text-decoration: none;
+}
+
+/* --- Responsive --- */
+@media (max-width: 576px) {
+  .h2 {
+    font-size: 1.5rem;
+  }
+}
+/* IPAD LAPTOP */
+@media (min-width: 768px) {
+  /*- ACCEUIL- */
+}

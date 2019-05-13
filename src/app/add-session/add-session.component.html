@@ -1,48 +1,143 @@
 <div class="form w-100 mx-3">
-    <form  method="" class="" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-        <div class="form-group">
-            <label for="coaches">Choisir le coach</label>
-            <select ngModel #coach="ngModel" name="coach" class="form-control" [ngModel]="null" [class.is-invalid]="coach.value == 'null'" [class.is-valid]="coach.value != null">
-                <option [value]="null">Choisir un coach</option>
-                <option *ngFor="let c of coaches" [value]="c">{{c.firstName}} {{c.lastName}}</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="companies">Choisir l'entreprise</label>
-            <select ngModel #com="ngModel" name="com" class="form-control" id="com" [ngModel]="null" [class.is-invalid]="com.value == 'null'" [class.is-valid]="com.value != null">
-                <option [value]="null">Choisir l'entreprise</option>
-                <option *ngFor="let company of companies" [value]="company.name">{{company.name}}</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="date-input" class="col-form-label">Date</label>
-            <div class="">
-              <input ngModel #date="ngModel" name="date" required name="date" class="form-control" type="date" value="2011-08-19" id="date-input" [(ngModel)]="today" [class.is-valid]="date.touched">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="minParticipants">Places prises</label>
-            <input ngModel #minParticipants="ngModel" required name="minParticipants" type="number" class="form-control" id="minParticipants" placeholder="exp: 0" min="1" max="20" [class.is-invalid]="minParticipants.value <= 0" [class.is-valid]="minParticipants.value > 0">
-        </div>
-        <div class="form-group">
-            <label for="maxParticipants">Places libres</label>
-            <input ngModel #maxParticipants="ngModel" required name="maxParticipants" type="number" class="form-control" id="maxParticipants" placeholder="exp: 20" [class.is-invalid]="maxParticipants.value <= 0" min="1" max="20" [class.is-valid]="maxParticipants.value > 0">
-        </div>
-        <div class="form-group">
-            <label for="hour">Heure</label>
-            <input ngModel required name="hour" type="time" class="form-control" id="hour" [class.is-valid]="hour.touched" #hour="ngModel" [(ngModel)]="time">
-        </div>
-        <div class="form-group">
-            <label for="duration">Durée (heures)</label>
-            <input ngModel required #duration="ngModel" name="duration" type="number" class="form-control" id="duration" placeholder="exp: 2" [class.is-invalid]="duration.value <= 0" [class.is-valid]="duration.value > 0">
-        </div>
-        <div class="form-group">
-            <label for="sport">Choisir le sport</label>
-            <select ngModel required #sport="ngModel" name="sport" class="form-control" id="sport" [ngModel]="null" [class.is-invalid]="sport.value == 'null'" [class.is-valid]="sport.value != null">
-              <option [value]="null">Choisir un sport</option>
-              <option [value]="1">1</option>
-            </select>
-        </div>
-        <input type="submit" value="Valider" [disabled]="f.invalid" class="btn btn-success d-block m-auto">
-    </form>
-  </div><!--[disabled]="f.invalid"--> 
+  <form method="" class="" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+    <div class="form-group">
+      <label for="coaches">Choisir le coach</label>
+      <select
+        ngModel
+        #coach="ngModel"
+        name="coach"
+        class="form-control"
+        [ngModel]="null"
+        [class.is-invalid]="coach.value == 'null'"
+        [class.is-valid]="coach.value != null"
+      >
+        <option [value]="null">Choisir un coach</option>
+        <option *ngFor="let coach of coaches" [value]="coach.lastName"
+          >{{ coach.firstName }} {{ coach.lastName }}</option
+        >
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="companies">Choisir l'entreprise</label>
+      <select
+        ngModel
+        #company="ngModel"
+        name="company"
+        class="form-control"
+        id="company"
+        [ngModel]="null"
+        [class.is-invalid]="company.value == 'null'"
+        [class.is-valid]="company.value != null"
+      >
+        <option [value]="null">Choisir l'entreprise</option>
+        <option *ngFor="let company of companies" [value]="company.name">{{
+          company.name
+        }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="date-input" class="col-form-label">Date</label>
+      <div class="">
+        <input
+          ngModel
+          #date="ngModel"
+          name="date"
+          required
+          name="date"
+          class="form-control"
+          type="date"
+          value="2011-08-19"
+          id="date-input"
+          [(ngModel)]="today"
+          [class.is-valid]="date.touched"
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="minParticipant">Nombre de participants minimum</label>
+      <input
+        ngModel
+        required
+        name="minParticipant"
+        type="number"
+        class="form-control"
+        id="minParticipant"
+        placeholder="Minimum"
+        min="1"
+        max="20"
+        #minParticipant="ngModel"
+        [ngModel]="null"
+        [class.is-invalid]="minParticipant.value == 'null'"
+        [class.is-valid]="minParticipant.value != null"
+      />
+    </div>
+    <div class="form-group">
+      <label for="maxParticipant">Nombre de participants maximum</label>
+      <input
+        ngModel
+        required
+        name="maxParticipant"
+        type="number"
+        class="form-control"
+        id="maxParticipant"
+        placeholder="Maximum"
+        min="1"
+        max="20"
+        #maxParticipant="ngModel"
+        [ngModel]="null"
+        [class.is-invalid]="maxParticipant.value == 'null'"
+        [class.is-valid]="maxParticipant.value != null"
+      />
+    </div>
+    <div class="form-group">
+      <label for="timeSession">Heure</label>
+      <input
+        ngModel
+        required
+        name="timeSession"
+        type="time"
+        class="form-control"
+        id="timeSession"
+        #hour="ngModel"
+        [(ngModel)]="timeSession"
+      />
+    </div>
+    <div class="form-group">
+      <label for="duration">Durée de la séance</label>
+      <input
+        ngModel
+        required
+        #duration="ngModel"
+        name="duration"
+        type="time"
+        class="form-control"
+        id="duration"
+        placeholder="1"
+        [class.is-invalid]="duration.value < 0"
+        [class.is-valid]="duration.value > 0"
+      />
+    </div>
+    <div class="form-group">
+      <label for="sport">Type de sport</label>
+      <input
+        ngModel
+        required
+        #sport="ngModel"
+        name="sport"
+        type="text"
+        class="form-control"
+        id="sport"
+        [ngModel]="f.sport"
+        [class.is-invalid]="sport.value == 'null'"
+        [class.is-valid]="sport.value != null"
+      />
+    </div>
+    <input
+      type="submit"
+      value="Valider"
+      [disabled]="f.invalid"
+      class="btn btn-primary d-block m-auto"
+    />
+  </form>
+</div>
+<!--[disabled]="f.invalid"-->

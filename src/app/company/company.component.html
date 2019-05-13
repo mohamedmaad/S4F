@@ -31,7 +31,6 @@
             </button>
           </p>
           <hr />
-          <!-- <div class="col-4"></div> -->
         </div>
       </div>
     </div>
@@ -42,7 +41,7 @@
         *ngIf="router.url == '/entreprises'"
         [routerLink]="'/entreprise/ajouter'"
       >
-        Créer une nouvelle entreprise
+        Ajouter une nouvelle entreprise
       </a>
       <a
         class="btn btn-danger offset-10"
@@ -54,6 +53,7 @@
 
       <app-add-company
         *ngIf="router.url == '/entreprise/ajouter'"
+        class="w-50"
       ></app-add-company>
     </div>
   </div>

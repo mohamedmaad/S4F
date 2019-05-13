@@ -27,6 +27,7 @@ import { CoachService } from './_services/coach.service'
 import { HomeComponent } from './home/home.component'
 import { RegisterationComponent } from './registeration/registeration.component'
 import { CompanyService } from './_services/company.service'
+import { SessionService } from './_services/session.service'
 
 @NgModule({
   imports: [
@@ -58,7 +59,7 @@ import { CompanyService } from './_services/company.service'
     HomeComponent,
     RegisterationComponent,
   ],
-  providers: [CoachService, CompanyService],
+  providers: [CoachService, CompanyService, SessionService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

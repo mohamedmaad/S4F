@@ -1,43 +1,55 @@
-<div class="detail-container d-flex justify-content-center">
-  <div class="details mx-3 w-50">
-    <div class="d-flex justify-content-between align-items-center mb-5">
-      <h2>Liste des séances &nbsp;</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-sm-12  text-dark">
+      <h2 class="mb-3 h2">Listes des séances</h2>
+
+      <div class="row">
+        <div class="col-12 " *ngFor="let sessions of sessions">
+          <a
+            routerLink="/seance/detail/{{ sessions._id }}"
+            class="img text-dark"
+          >
+            <h5>
+              {{ sessions.company }}
+            </h5>
+          </a>
+          <p>
+            Date : {{ sessions.date | date: 'dd-MM-yyyy' }}
+            <button
+              type="button"
+              (click)="deleteOne(sessions._id)"
+              class="btn text-danger float-right"
+            >
+              <i class="fas fa-trash-alt"></i>
+            </button>
+            <button type="button" class="btn ml-5 offset-8 float-right">
+              <i class="fas fa-pen"></i>
+            </button>
+          </p>
+          <hr />
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-sm-12 text-center">
       <a
-        class="btn btn-success"
-        *ngIf="_router.url != '/seances/ajouter'"
+        class="btn btn-secondary offset-md-6"
+        *ngIf="_router.url == '/seances'"
         [routerLink]="'/seances/ajouter'"
-        >Ajouter une séance</a
       >
+        Ajouter une séance
+      </a>
       <a
-        class="btn btn-success"
+        class="btn btn-danger offset-10"
         *ngIf="_router.url == '/seances/ajouter'"
         [routerLink]="'/seances'"
-        >Retour</a
       >
+        Retour
+      </a>
+
+      <!-- Formulaire d'ajout d'une séance -->
+      <app-add-session *ngIf="_router.url == '/seances/ajouter'" class="w-50">
+      </app-add-session>
     </div>
-    <ul class="session">
-      <li *ngFor="let s of session" class="mx-5">
-        <a [routerLink]="['/seance/detail/', s.id]"
-          ><div class="d-flex justify-content-between">
-            <p class="h5">{{ s.company }}</p>
-            <i class="bg-danger text-white rounded px-2 py-1 text-center"
-              ><a class="text-white" [routerLink]="['/seances/remove/', s.id]"
-                >X</a
-              ></i
-            >
-          </div></a
-        >
-        <p>
-          <em
-            >ID Séance : {{ s.id }}<br />
-            Date : {{ s.date }}</em
-          >
-        </p>
-      </li>
-    </ul>
   </div>
-  <app-add-session
-    *ngIf="_router.url == '/seances/ajouter'"
-    class="w-50"
-  ></app-add-session>
 </div>

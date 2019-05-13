@@ -6,30 +6,26 @@
   </div>
 </nav> -->
 <div *ngIf="logged">
-    <app-navbar></app-navbar>
-  </div>
-  <!-- main app container -->
-  <div class="jumbotron">
-    <div class="container">
+  <app-navbar></app-navbar>
+</div>
+<!-- main app container -->
+<div class="jumbotron">
+  <div class="container">
+    <div>
       <div>
-        <div>
-          <alert></alert>
-          <router-outlet (activate)="changeOfRoutes"></router-outlet>
-        </div>
+        <alert></alert>
+        <router-outlet (activate)="(changeOfRoutes)"></router-outlet>
       </div>
     </div>
   </div>
-
-  <!-- credits -->
-  <div class="text-center">
-    <p>
-      <a
-        href="http://jasonwatmore.com/post/2018/10/29/angular-7-user-registration-and-login-example-tutorial"
-        target="_top"
-        ></a
-      >
-    </p>
-    <p>
-      <a href="http://jasonwatmore.com" target="_top"></a>
-    </p>
-  </div>
+</div>
+<app-home></app-home>
+<!-- credits -->
+<div class="text-center">
+  <p>
+    <a href="#" target="_top"></a>
+  </p>
+  <p>
+    <a href="#" target="_top"></a>
+  </p>
+</div>

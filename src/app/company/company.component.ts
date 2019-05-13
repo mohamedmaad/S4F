@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core'
-
-import { Company } from '@app/_models/company.ts'
 import { CompanyService } from '@app/_services/company.service'
 import { Router, ActivatedRoute } from '@angular/router'
 

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { Location } from '@angular/common'
-import { Company } from '@app/_models/company.ts'
 import { CompanyService } from '@app/_services/company.service'
 
 @Component({
