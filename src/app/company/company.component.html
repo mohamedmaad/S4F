@@ -1,29 +1,39 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6 col-sm-12  text-dark">
-      <h2 class="mb-3 h2">Listes des entreprises</h2>
-      <div class="row">
+
+    <div class="col-md-6 offset-md-3 col-sm-12 pb-5">
+      <app-add-company *ngIf="router.url == '/entreprise/ajouter'" class="w-50"></app-add-company>
+    </div>
+
+    <div class="col-md-6 offset-md-3 col-sm-12  text-dark">
+      <h2 class="h2 mb-3 text-center pb-3">Listes des entreprises</h2>
+
+      <div class="row pb-4">
+        <div class="col-md-6 col-sm-12 text-center">
+          <a class="btn btn-block btn-secondary offset-md-6" *ngIf="router.url == '/entreprises'"
+            [routerLink]="'/entreprise/ajouter'">
+            Ajouter une nouvelle entreprise
+          </a>
+          <a class="btn btn-block btn-danger offset-md-6" *ngIf="router.url == '/entreprise/ajouter'"
+            [routerLink]="'/entreprises'">
+            Retour
+          </a>
+
+        </div> <!-- ./col-md-6 -->
+      </div>
+
+      <div class="row pt-3">
         <div class="col-12 " *ngFor="let company of companies">
-          <a
-            routerLink="/entreprise/detail-c/{{ company._id }}"
-            class="img text-dark"
-          >
-            <img
-              src="../../assets/img/47682658_579366792507336_2199209627067875328_n.png"
-              class="rounded-circle w-20 float-left"
-              alt="..."
-            />
+          <a routerLink="/entreprise/detail-c/{{ company._id }}" class="img text-dark">
+            <img src="../../assets/img/47682658_579366792507336_2199209627067875328_n.png"
+              class="rounded-circle w-20 float-left" alt="..." />
             <h5>
-              {{ company.name }}
+              {{ company.name | uppercase }}
             </h5>
           </a>
           <p>
-            {{ company.activity }}
-            <button
-              type="button"
-              class="btn text-danger float-right"
-              (click)="deleteOne(company._id)"
-            >
+            {{ company.activity | titlecase }}
+            <button type="button" class="btn text-danger float-right" (click)="deleteOne(company._id)">
               <i class="fas fa-trash-alt"></i>
             </button>
             <button type="button" class="btn ml-5 offset-8 float-right">
@@ -31,30 +41,10 @@
             </button>
           </p>
           <hr />
-        </div>
-      </div>
-    </div>
+        </div> <!-- ./col-12 -->
+      </div> <!-- ./row -->
+    </div> <!-- ./col-md-6 -->
 
-    <div class="col-md-6 col-sm-12 text-center">
-      <a
-        class="btn btn-secondary offset-md-6"
-        *ngIf="router.url == '/entreprises'"
-        [routerLink]="'/entreprise/ajouter'"
-      >
-        Ajouter une nouvelle entreprise
-      </a>
-      <a
-        class="btn btn-danger offset-10"
-        *ngIf="router.url == '/entreprise/ajouter'"
-        [routerLink]="'/entreprises'"
-      >
-        Retour
-      </a>
 
-      <app-add-company
-        *ngIf="router.url == '/entreprise/ajouter'"
-        class="w-50"
-      ></app-add-company>
-    </div>
-  </div>
-</div>
+  </div> <!-- ./row -->
+</div> <!-- ./container -->
