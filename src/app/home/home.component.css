@@ -48,7 +48,7 @@ span{
 }
 
 
-@media only screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
     .home {
       background-image: url(../../assets/img/run-respsonsive.jpg);
     }

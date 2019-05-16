@@ -1,3 +1,4 @@
+<div class="background">
 <div class="container">
 
   <div class="row">
@@ -9,7 +10,7 @@
     </div>
 
     <div class="col-md-6 offset-md-3 col-sm-12  text-dark">
-      <h2 class="mb-3 h2 text-center">Listes des séances</h2>
+      <h2 class="mb-3 h2 text-center list-seances">Listes des séances</h2>
 
       <div class="row pb-4">
         <div class="col-md-6 col-sm-12 text-center">
@@ -27,7 +28,7 @@
 
       <div class="row">
 
-        <div class="col-12 " *ngFor="let sessions of sessions">
+        <div class="col-12 fond-blanc" *ngFor="let sessions of sessions">
           <a routerLink="/seance/detail/{{ sessions._id }}" class="img text-dark">
             <h5>
               {{ sessions.company }}
@@ -51,3 +52,4 @@
 
   </div> <!-- ./row -->
 </div> <!-- ./container -->
+</div>

@@ -8,25 +8,21 @@
   padding: 0;
   width: 15em;
 }
-/* .session li {
-    cursor: pointer;
-    position: relative;
-    left: 0;
-    background-color: #eee;
-    margin: 0.5em;
-    padding: 0.3em 0;
-    height: 1.8em;
-    border-radius: 4px;
-  }
-  .session li.selected:hover {
-    background-color: #bbd8dc !important;
-    color: white;
-  }
-  .session li:hover {
-    color: #607d8b;
-    background-color: #ddd;
-    left: 0.1em;
-  } */
+.background{
+  background: url(../../assets/img/team-1.jpg) fixed;
+  background-size: cover;
+}
+.fond-blanc
+{
+  background: #cfd8dccb;
+  padding-top: 2vh;
+  margin-bottom: 1vh;
+  border-radius: 5px;
+} 
+.list-seances{
+  color: white;
+  text-shadow: 1px 1px 1px black; 
+}
 .session .text {
   position: relative;
   top: -3px;
