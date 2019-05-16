@@ -1,31 +1,27 @@
-﻿<!-- nav -->
-<!-- <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
-  <div class="navbar-nav">
-    <a class="nav-item nav-link" routerLink="/">Home</a>
-    <a class="nav-item nav-link" (click)="logout()">Logout</a>
-  </div>
-</nav> -->
-<div *ngIf="logged">
+﻿<div *ngIf="logged">
   <app-navbar></app-navbar>
 </div>
 <!-- main app container -->
-<div class="jumbotron">
-  <div class="container">
-    <div>
+
+  <!-- <div class="container"> -->
+    
       <div>
         <alert></alert>
         <router-outlet (activate)="(changeOfRoutes)"></router-outlet>
+
       </div>
-    </div>
-  </div>
-</div>
-<app-home></app-home>
+
+      <!-- <app-home></app-home> -->
+    
+  <!-- </div> -->
+
+
 <!-- credits -->
-<div class="text-center">
+<!-- <div class="text-center">
   <p>
     <a href="#" target="_top"></a>
   </p>
   <p>
     <a href="#" target="_top"></a>
   </p>
-</div>
+</div> -->
