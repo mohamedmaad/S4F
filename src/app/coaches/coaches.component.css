@@ -59,6 +59,12 @@
   text-decoration: none;
 }
 
+/* ------ BACKGROUND ------ */
+
+.container{
+  /* background-image: url(../../assets/img/sport-2264825_1920.jpg); */
+}
+
 /* --- Responsive --- */
 @media (max-width: 576px) {
   .h2 {
