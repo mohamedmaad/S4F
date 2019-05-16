@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-md-6 offset-md-3 col-sm-12 pb-5">
+    <div class="col-md-6 offset-md-3 col-sm-12 pb-5 mt-4">
       <app-add-company *ngIf="router.url == '/entreprise/ajouter'" class="w-50"></app-add-company>
     </div>
 
@@ -25,7 +25,7 @@
       <div class="row pt-3">
         <div class="col-12 " *ngFor="let company of companies">
           <a routerLink="/entreprise/detail-c/{{ company._id }}" class="img text-dark">
-            <img src="../../assets/img/47682658_579366792507336_2199209627067875328_n.png"
+            <img src="../../assets/img/Logo-sans-fond.png"
               class="rounded-circle w-20 float-left" alt="..." />
             <h5>
               {{ company.name | uppercase }}

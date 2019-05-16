@@ -1,31 +1,13 @@
-label {
-  display: inline-block;
-  width: 3em;
-  margin: 0.5em 0;
-  color: #607d8b;
-  font-weight: bold;
+.card-header img{
+  width: 150px;
+  height: 150px;
 }
-input {
-  height: 2em;
-  font-size: 1em;
-  padding-left: 0.4em;
+
+.card-body p{
+  font-size: 1.3rem;
 }
-button {
-  margin-top: 20px;
-  font-family: Arial;
-  background-color: #343a40;
-  color: rgba(255, 255, 255, 0.5);
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  cursor: hand;
-}
-button:hover {
-  background-color: #cfd8dc;
-}
-button:disabled {
-  background-color: #eee;
-  color: #ccc;
-  cursor: auto;
-}
+
+
+
+
+
