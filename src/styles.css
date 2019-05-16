@@ -2,6 +2,8 @@
 
 body {
     font-family: 'Lato', sans-serif;
+    background: lightgrey;
+    margin-top: 86px;
 }
 
 a {
