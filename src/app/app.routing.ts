@@ -13,7 +13,7 @@ import { HomeComponent } from './home/home.component'
 import { RegisterationComponent } from './registeration/registeration.component'
 
 const appRoutes: Routes = [
-  // { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },

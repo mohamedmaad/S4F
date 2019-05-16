@@ -4,7 +4,7 @@ import { Router, NavigationEnd } from '@angular/router'
 import { User } from './_models'
 import { EventEmitter } from 'protractor';
 
-@Component({ selector: 'app', templateUrl: 'app.component.html',styleUrls: ['./home/home.component.css'] })
+@Component({ selector: 'app', templateUrl: 'app.component.html' })
 
 export class AppComponent implements OnInit {
   currentUser: User
