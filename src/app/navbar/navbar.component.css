@@ -42,7 +42,7 @@ a span {
 
 
 
-@media screen and (min-width: 992px){
+@media screen and (min-width: 1200px){
   .form-inline .navmenu .nav-item{
     display: inline-flex;
     margin-right: 30px;

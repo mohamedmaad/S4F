@@ -60,6 +60,10 @@ td a {
   border-radius: 4px 0 0 4px;
 }
 
+.card-body, .card-header{
+  color: black;
+}
+
 /* --- Responsive --- */
 @media (max-width: 576px) {
   img {
