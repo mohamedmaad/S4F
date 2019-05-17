@@ -4,6 +4,7 @@ import { Location } from '@angular/common'
 
 import { Coach } from '@app/_models/coach'
 import { CoachService } from '@app/_services/coach.service'
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-coach-detail',
@@ -16,7 +17,8 @@ export class CoachDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private coachService: CoachService,
-    private location: Location
+    private location: Location,
+    private http: HttpClient
   ) {}
 
   ngOnInit() {
@@ -32,5 +34,17 @@ export class CoachDetailComponent implements OnInit {
 
   goBack(): void {
     this.location.back()
+  }
+
+  /* UPLOAD IMAGE */
+
+  selectedFile = null;
+
+  onFileSelected(event){
+    this.selectedFile = event.target.files[0];
+  }
+
+  onUpload(){
+    this.http.post('')
   }
 }

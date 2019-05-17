@@ -18,6 +18,18 @@
   background: rgb(230, 230, 230);
 }
 
+.profilpicture:hover{
+  /* opacity: 0.3;
+  background-image: url(../../assets/img/ajouter.png); */
+}
+
+.editbutton{
+  border-radius: 50%;
+  background: rgb(230, 230, 230);
+  border: none;
+}
+
+
 
 
 
