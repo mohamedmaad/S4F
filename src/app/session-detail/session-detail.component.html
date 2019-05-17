@@ -1,26 +1,28 @@
-<div *ngFor="let sessions of sessions">
-  <h2>
-    {{ 'séance' | uppercase }}
-  </h2>
 
-  <div><span>Coach: </span>{{ sessions.coach }}</div>
+<div class="container">
+  <div class="row" *ngFor="let sessions of sessions">
+    <div class="col-md-6 offset-md-3">
 
-  <div><span>Entreprise: </span>{{ sessions.company }}</div>
+      <div class="card text-white mt-5">
+        <div class="card-header text-center">
+          <img src="../../assets/img/Logo-sans-fond.png" alt="..." class="img-thumbnail rounded-circle"><br /><br />
+          <h3>{{ 'séance' | uppercase }}</h3>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title text-center">Entreprise : &nbsp; {{ sessions.company | uppercase }}<br /><br /></h4>
+          <p class="card-text text-center">
+             Coach : &nbsp; {{ sessions.coach | titlecase }} <br /><br />
+             Date :&nbsp; {{ sessions.date | date: 'dd-MM-yyyy' }} <br /><br />
+             Heure : &nbsp; {{ sessions.timeSession }} <br /><br />
+             Durée : &nbsp; {{ sessions.duration }} <br /><br />
+             Nombre de participants minimum: &nbsp; {{ sessions.minParticipant }} <br /><br />
+             Nombre de participants maximum: &nbsp; {{ sessions.maxParticipant }}
+          </p>
+          <button (click)="goBack()" class="btn btn-block btn-dark">Retour</button>
+        </div>
+      </div>
 
-  <div><span>Date: </span>{{ sessions.date | date: 'dd-MM-yyyy' }}</div>
+    </div> <!-- ./col-md-6 -->
+  </div> <!-- ./row -->
 
-  <div><span>Heure: </span>{{ sessions.timeSession }}</div>
-
-  <div><span>Durée: </span>{{ sessions.duration }}</div>
-  <div>
-    <span>Nombre de participants minimum: </span>{{ sessions.minParticipant }}
-  </div>
-  <div>
-    <span>Nombre de participants maximum: </span>{{ sessions.maxParticipant }}
-  </div>
-</div>
-<br />
-
-<div>
-  <button (click)="goBack()" class="btn btn-dark">Retour</button>
-</div>
+</div> <!-- ./container -->

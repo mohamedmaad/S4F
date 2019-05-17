@@ -57,9 +57,9 @@
 }
 
 /* --- Responsive --- */
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   .background{
     background: url(../../assets/img/basketball-2.jpg) fixed;

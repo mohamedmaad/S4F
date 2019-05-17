@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row" *ngFor="let coach of coach">
-    <div class="col-md-6 offset-md-3">
+    <div class="col-md-6 offset-md-3 detail">
 
-      <div class="card text-white bg-dark mt-5">
+      <div class="card text-white mt-5">
         <div class="card-header text-center">
           <img src="../../assets/img/Logo-sans-fond.png" alt="..." class="img-thumbnail rounded-circle"><br /><br />
-          <h3 class="ml-5">{{ coach.firstName | titlecase }} {{ coach.lastName | uppercase}} &nbsp;<a href="#"><i class="fas fa-pencil-alt"></i></a></h3>
+          <h3>{{ coach.firstName | titlecase }} {{ coach.lastName | uppercase}}</h3>
         </div>
         <div class="card-body">
           <h4 class="card-title text-center">{{ coach.company | uppercase }}<br /><br /></h4>
@@ -15,7 +15,7 @@
             Email : &nbsp; {{ coach.email }} <br /><br />
             Téléphone : &nbsp; {{ coach.tel }}
           </p>
-          <button (click)="goBack()" class="btn btn-block btn-secondary">Retour</button>
+          <button (click)="goBack()" class="btn btn-block btn-dark">Retour</button>
         </div>
       </div>
 
