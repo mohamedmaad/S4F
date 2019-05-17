@@ -17,7 +17,8 @@
 }
 .list-entreprise{
   color: white;
-  text-shadow: 1px 1px 1px black; 
+  text-shadow: 1px 1px 1px black;
+  font-size: 4rem;  
 }
 .company .text {
   position: relative;
