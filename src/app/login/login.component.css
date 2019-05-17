@@ -19,10 +19,38 @@ h2 {
 .logo{
   width: 300px;
 }
+.forgot{
+  margin-top: 20px;
+}
 
+/* RESPONSIVE */
 
 @media (max-width: 768px) {
-  .yoga img{
-    margin-top: 5vh;
+  .login-right{
+    display: none;
+  }
+  .mediacol{
+    margin-top: 10%;
+    margin-left: 25%;
+    font-size: 2rem;
+  }
+  h2{
+    font-size: 3rem;
+  }
+}
+
+
+@media (max-width: 568px) {
+  .mediacol{
+    margin-left: 7%;
+    font-size: 1rem;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  h2{
+    font-size: 2rem;
+  }
+  .logo{
+    width:250px;
   }
 }
