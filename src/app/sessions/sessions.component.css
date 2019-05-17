@@ -9,7 +9,7 @@
   width: 15em;
 }
 .background{
-  background: url(../../assets/img/team-1.jpg) fixed;
+  background: url(../../assets/img/fitness-group2.jpg) fixed;
   background-size: cover;
 }
 .fond-blanc
@@ -21,7 +21,8 @@
 } 
 .list-seances{
   color: white;
-  text-shadow: 1px 1px 1px black; 
+  text-shadow: 1px 1px 1px black;
+  font-size: 4rem; 
 }
 .session .text {
   position: relative;
