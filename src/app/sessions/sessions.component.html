@@ -14,7 +14,7 @@
 
       <div class="row pb-4">
         <div class="col-md-6 col-sm-12 text-center">
-          <a class="btn btn-block btn-secondary offset-md-6" *ngIf="_router.url == '/seances'"
+          <a class="btn btn-block btn-success offset-md-6" *ngIf="_router.url == '/seances'"
             [routerLink]="'/seances/ajouter'">
             Ajouter une séance
           </a>
@@ -31,7 +31,7 @@
         <div class="col-12 fond-blanc" *ngFor="let sessions of sessions">
           <a routerLink="/seance/detail/{{ sessions._id }}" class="img text-dark">
             <h5>
-              {{ sessions.company }}
+              {{ sessions.company | uppercase }}
             </h5>
           </a>
           <p>

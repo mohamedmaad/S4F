@@ -3,8 +3,7 @@
 
     <div class="row">
 
-
-      <div class="col-md-6 col-offset-3 col-sm-12 pb-5">
+      <div class="col-md-6 offset-md-3 col-sm-12 pb-5 mt-4">
         <app-add-coach *ngIf="router.url == '/coach/add'"></app-add-coach>
       </div>
 
@@ -13,7 +12,7 @@
 
         <div class="row pb-4">
           <div class="col-md-6 col-sm-12 text-center">
-            <a class="btn btn-block btn-secondary offset-md-7 " *ngIf="router.url == '/coaches'"
+            <a class="btn btn-block btn-success offset-md-7 " *ngIf="router.url == '/coaches'"
               [routerLink]="'/coach/add'">
               Créer un nouveau Coach
             </a>
@@ -52,4 +51,4 @@
       </div> <!-- ./col-md-6 -->
     </div> <!-- ./row -->
   </div> <!-- ./container -->
-</div>
+</div> <!-- ./background -->
