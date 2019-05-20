@@ -1,29 +1,25 @@
 <nav class="navbar navbar-light navbar-expand-xl mb-4 fixed-top">
-  <a class="navbar-brand liens" href="home">
-    STREET4<span>FIT</span>
-  </a>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-
-    <div class="navbar-nav form-inline">
-
-      <div class="text-center navmenu" *ngIf="logged">
-        <a routerLink="/coaches" class="nav-item nav-link text-dark" (click)='class="currentpage"'>Coaches</a>
-        <a routerLink="/entreprises" class="nav-item nav-link text-dark" (click)='class="currentpage"'>Entreprises</a>
-        <a routerLink="/seances" class="nav-item nav-link text-dark" (click)='class="currentpage"'>Séances</a>
-      </div>
-
-      <div class="text-center navmenu" *ngIf="logged">
-        <a routerLink="/profil" class="nav-item nav-link text-dark">Profil</a>
-
-        <a class="nav-item nav-link text-secondary" (click)="logout()">Se déconnecter</a>
-      </div>
-
-    </div> <!-- ./form-inline -->
-  </div> <!-- ./navbar-collapse -->
-</nav>
+    <a class="navbar-brand liens" href="home">
+      STREET4<span>FIT</span>
+    </a>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+  
+      <div class="navbar-nav form-inline">
+  
+        <div class="text-center navmenu" *ngIf="logged">
+          <a routerLink="/coaches" class="nav-item nav-link text-dark">Coaches</a>
+          <a routerLink="/entreprises" class="nav-item nav-link text-dark">Entreprises</a>
+          <a routerLink="/seances" class="nav-item nav-link text-dark">Séances</a>
+          <a routerLink="/profil" class="nav-item nav-link text-dark">Profil</a>
+          <a class="nav-item nav-link text-secondary" (click)="logout()">Se déconnecter</a>
+        </div>
+  
+      </div> <!-- ./form-inline -->
+    </div> <!-- ./navbar-collapse -->
+  </nav>

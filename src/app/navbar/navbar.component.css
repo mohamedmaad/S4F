@@ -36,11 +36,6 @@ a span {
   opacity: 1;
 }
 
-.navmenu a .currentpage{
-    color:            #F8F8F8;
-    background-color: #4f81bd;
-}
-
 
 
 @media screen and (min-width: 1200px){
