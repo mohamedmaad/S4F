@@ -41,4 +41,8 @@ export class CoachService {
   deleteOne(id: string) {
     return this.http.post(`${this.URI_TEST}/coaches/delete`, { id })
   }
+
+  // Upload Image
+
+
 }

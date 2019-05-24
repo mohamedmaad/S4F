@@ -1,25 +1,42 @@
+<div class="background">
 <div class="container">
+
   <div class="row">
-    <div class="col-md-6 col-sm-12  text-dark">
-      <h2 class="mb-3 h2">Listes des séances</h2>
+
+    <div class="col-md-6 offset-md-3 col-sm-12 pb-5 mt-4">
+      <!-- Formulaire d'ajout d'une séance -->
+      <app-add-session *ngIf="_router.url == '/seances/ajouter'" class="w-50">
+      </app-add-session>
+    </div>
+
+    <div class="col-md-6 offset-md-3 col-sm-12  text-dark">
+      <h2 class="mb-3 h2 text-center list-seances">Listes des séances</h2>
+
+      <div class="row py-4">
+        <div class="col-md-6 col-sm-12 text-center">
+          <a class="btn btn-block btn-success offset-md-6" *ngIf="_router.url == '/seances'"
+            [routerLink]="'/seances/ajouter'">
+            Ajouter une séance
+          </a>
+          <a class="btn btn-block btn-danger offset-md-6" *ngIf="_router.url == '/seances/ajouter'"
+            [routerLink]="'/seances'">
+            Retour
+          </a>
+
+        </div> <!-- ./col-md-6 -->
+      </div>
 
       <div class="row">
-        <div class="col-12 " *ngFor="let sessions of sessions">
-          <a
-            routerLink="/seance/detail/{{ sessions._id }}"
-            class="img text-dark"
-          >
+
+        <div class="col-12 fond-blanc" *ngFor="let sessions of sessions">
+          <a routerLink="/seance/detail/{{ sessions._id }}" class="img text-dark">
             <h5>
-              {{ sessions.company }}
+              {{ sessions.company | uppercase }}
             </h5>
           </a>
           <p>
             Date : {{ sessions.date | date: 'dd-MM-yyyy' }}
-            <button
-              type="button"
-              (click)="deleteOne(sessions._id)"
-              class="btn text-danger float-right"
-            >
+            <button type="button" (click)="deleteOne(sessions._id)" class="btn text-danger float-right">
               <i class="fas fa-trash-alt"></i>
             </button>
             <button type="button" class="btn ml-5 offset-8 float-right">
@@ -27,29 +44,12 @@
             </button>
           </p>
           <hr />
-        </div>
-      </div>
-    </div>
+        </div> <!-- ./col-12 -->
+        
+      </div> <!-- ./row -->
+    </div> <!-- ./col-md-6 -->
 
-    <div class="col-md-6 col-sm-12 text-center">
-      <a
-        class="btn btn-secondary offset-md-6"
-        *ngIf="_router.url == '/seances'"
-        [routerLink]="'/seances/ajouter'"
-      >
-        Ajouter une séance
-      </a>
-      <a
-        class="btn btn-danger offset-10"
-        *ngIf="_router.url == '/seances/ajouter'"
-        [routerLink]="'/seances'"
-      >
-        Retour
-      </a>
 
-      <!-- Formulaire d'ajout d'une séance -->
-      <app-add-session *ngIf="_router.url == '/seances/ajouter'" class="w-50">
-      </app-add-session>
-    </div>
-  </div>
+  </div> <!-- ./row -->
+</div> <!-- ./container -->
 </div>

@@ -1,17 +1,26 @@
-<div *ngFor="let company of companies">
-  <h2>{{ company.name | uppercase }}</h2>
 
-  <div><span>Secteur d'activité: </span>{{ company.activity }}</div>
+<div class="container">
+  <div class="row" *ngFor="let company of companies">
+    <div class="col-md-6 offset-md-3">
 
-  <div><span>Nombre de salariés: </span>{{ company.employees }}</div>
+      <div class="card text-white mt-5">
+        <div class="card-header text-center">
+          <img src="../../assets/img/Logo-sans-fond.png" alt="..." class="img-thumbnail rounded-circle"><br /><br />
+          <h3>{{ company.name | uppercase }}</h3>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title text-center">{{ company.activity | titlecase }}<br /><br /></h4>
+          <p class="card-text text-center">
+             Adresse : &nbsp; {{ company.address | titlecase }} <br /><br />
+             Nombre de salariés :&nbsp; {{ company.employees }} <br /><br />
+             Email : &nbsp; {{ company.email }} <br /><br />
+             Téléphone : &nbsp; {{ company.tel }}
+          </p>
+          <button (click)="goBack()" class="btn btn-block btn-dark">Retour</button>
+        </div>
+      </div>
 
-  <div><span>Adresse: </span>{{ company.adress }}</div>
+    </div> <!-- ./col-md-6 -->
+  </div> <!-- ./row -->
 
-  <div><span>Email: </span>{{ company.email }}</div>
-
-  <div><span>Téléphone: </span>{{ company.tel }}</div>
-</div>
-
-<div>
-  <button (click)="goBack()">go back</button>
-</div>
+</div> <!-- ./container -->

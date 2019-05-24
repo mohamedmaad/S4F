@@ -1,3 +1,5 @@
+<h2 class="text-center">Insription Coach</h2>
+
 <form #form="ngForm" (ngSubmit)="submitCoach(form)" *ngIf="active">
   <!--<pre>
     {{ form.valid }}
@@ -5,96 +7,45 @@
   </pre>-->
   <div class="form-group">
     <label for="firstname">Prénom</label>
-    <input
-      type="text"
-      name="firstName"
-      required
-      [(ngModel)]="form.firstName"
-      #firstName="ngModel"
-      [class.is-invalid]="firstName.touched && firstName.invalid"
-      [class.is-valid]="firstName.valid"
-      class="form-control"
-    />
+    <input type="text" name="firstName" required [(ngModel)]="form.firstName" #firstName="ngModel"
+      [class.is-invalid]="firstName.touched && firstName.invalid" [class.is-valid]="firstName.valid"
+      class="form-control" />
   </div>
   <div class="form-group">
     <label for="lastName">Nom</label>
-    <input
-      type="text"
-      name="lastName"
-      required
-      [(ngModel)]="form.lastName"
-      #lastName="ngModel"
-      [class.is-invalid]="lastName.touched && lastName.invalid"
-      [class.is-valid]="lastName.valid"
-      class="form-control"
-    />
+    <input type="text" name="lastName" required [(ngModel)]="form.lastName" #lastName="ngModel"
+      [class.is-invalid]="lastName.touched && lastName.invalid" [class.is-valid]="lastName.valid"
+      class="form-control" />
   </div>
   <div class="form-group">
     <label for="dateofbirth">Date de naissance</label>
-    <input
-      type="date"
-      name="dateOfBirth"
-      required
-      [(ngModel)]="form.dateOfBirth"
-      #dateOfBirth="ngModel"
-      [class.is-invalid]="dateOfBirth.touched && dateOfBirth.invalid"
-      [class.is-valid]="dateOfBirth.valid"
-      class="form-control"
-    />
+    <input type="date" name="dateOfBirth" required [(ngModel)]="form.dateOfBirth" #dateOfBirth="ngModel"
+      [class.is-invalid]="dateOfBirth.touched && dateOfBirth.invalid" [class.is-valid]="dateOfBirth.valid"
+      class="form-control" />
   </div>
   <div class="form-group">
     <label for="company">Entreprise</label>
-    <input
-      type="text"
-      name="company"
-      required
-      [(ngModel)]="form.company"
-      #company="ngModel"
-      [class.is-invalid]="company.touched && company.invalid"
-      [class.is-valid]="company.valid"
-      class="form-control"
-    />
+    <input type="text" name="company" required [(ngModel)]="form.company" #company="ngModel"
+      [class.is-invalid]="company.touched && company.invalid" [class.is-valid]="company.valid" class="form-control" />
   </div>
   <div class="form-group">
     <label for="speciality">Spécialité</label>
-    <input
-      type="text"
-      name="speciality"
-      required
-      [(ngModel)]="form.speciality"
-      #speciality="ngModel"
-      [class.is-invalid]="speciality.touched && speciality.invalid"
-      [class.is-valid]="speciality.valid"
-      class="form-control"
-    />
+    <input type="text" name="speciality" required [(ngModel)]="form.speciality" #speciality="ngModel"
+      [class.is-invalid]="speciality.touched && speciality.invalid" [class.is-valid]="speciality.valid"
+      class="form-control" />
   </div>
   <div class="form-group">
     <label for="email">Email</label>
-    <input
-      type="email"
-      name="email"
-      required
-      [(ngModel)]="form.email"
-      #email="ngModel"
-      [class.is-invalid]="email.touched && email.invalid"
-      [class.is-valid]="email.valid"
-      class="form-control"
-    />
+    <input type="email" name="email" required [(ngModel)]="form.email" #email="ngModel"
+      [class.is-invalid]="email.touched && email.invalid" [class.is-valid]="email.valid" class="form-control" />
   </div>
   <div class="form-group">
     <label for="tel">Téléphone</label>
-    <input
-      type="text"
-      name="tel"
-      [(ngModel)]="form.tel"
-      #tel="ngModel"
-      [class.is-invalid]="tel.touched && tel.invalid"
-      [class.is-valid]="tel.valid"
-      class="form-control"
-    />
+    <input type="text" name="tel" [(ngModel)]="form.tel" #tel="ngModel" [class.is-invalid]="tel.touched && tel.invalid"
+      [class.is-valid]="tel.valid" class="form-control" />
   </div>
   <br />
-  <button type="submit" [disabled]="form.invalid" class="btn btn-primary">
+  <button type="submit" [disabled]="form.invalid" class="btn btn-block btn-success">
     Ajouter le coach
   </button>
 </form>

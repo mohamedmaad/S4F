@@ -2,31 +2,24 @@
   background-color: #cfd8dc !important;
   color: white;
 }
+.fond-blanc
+{
+  background: #cfd8dca8;
+  padding-top: 2vh;
+  margin-bottom: 1vh;
+  border-radius: 5px;
+} 
 .company {
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
   width: 15em;
 }
-/* .company li {
-  cursor: pointer;
-  position: relative;
-  left: 0;
-  background-color: #eee;
-  margin: 0.5em;
-  padding: 0.3em 0;
-  height: 1.8em;
-  border-radius: 4px;
-}
-.company li.selected:hover {
-  background-color: #bbd8dc !important;
+.list-entreprise{
   color: white;
+  text-shadow: 1px 1px 1px black;
+  font-size: 4rem;  
 }
-.company li:hover {
-  color: #607d8b;
-  background-color: #ddd;
-  left: 0.1em;
-} */
 .company .text {
   position: relative;
   top: -3px;
@@ -45,6 +38,10 @@
   margin-right: 0.8em;
   border-radius: 4px 0 0 4px;
 }
+.background{
+  background: url(../../assets/img/entreprise-para2.jpg) fixed;
+  background-size: cover;
+}
 
 /* ------------------ */
 
@@ -60,9 +57,13 @@
 }
 
 /* --- Responsive --- */
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
+  }
+  .background{
+    background: url(../../assets/img/basketball-2.jpg) fixed;
+    background-size: cover;
   }
 }
 /* IPAD LAPTOP */

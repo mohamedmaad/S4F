@@ -1,9 +1,28 @@
+.row{
+  margin-top: -80px;
+}
 h2 {
   text-align: center;
 }
+.yoga img
+{
+  width: 95%;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.boxe img
+{
+  width: 95%;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.logo{
+  width: 300px;
+}
 
-@media (max-width: 576px) {
-  .offset-3 {
-    margin-left: 0%;
+
+@media (max-width: 768px) {
+  .yoga img{
+    margin-top: 5vh;
   }
 }

@@ -42,12 +42,3 @@ export class CoachUpdateComponent implements OnInit {
     })
   }
 }
-
-// addCoach(data) {
-//   this.cs.addCoach(data).subscribe(res => {
-//     this.response = res as string[]
-//     if (this.response.status == 'coach saved') {
-//       this.router.navigate(['coaches'])
-//     }
-//   })
-// }

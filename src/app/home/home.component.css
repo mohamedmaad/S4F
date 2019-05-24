@@ -1,0 +1,59 @@
+.logo-homepage
+{
+    height: 22vh;
+    margin-top: 6vh;
+    margin-bottom: 5vh;
+}
+
+.home
+{
+    box-sizing: border-box;
+    background-image: url(../../assets/img/run.jpg);
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    margin:0;
+    padding:0;
+}
+
+.text-logo
+{
+    margin-bottom: 30vh;
+    font-size: 3rem;
+    color: #fff;
+    font-weight: 800;
+    font-family:  'Montserrat', sans-serif;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.7); 
+}
+
+
+.slogan
+{
+    color: #fff;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.7); 
+    font-family: 'Montserrat', serif;
+    font-size: 3rem;
+    margin-bottom: 2vh;
+    font-weight: 600;
+}
+
+.b-e
+{
+    padding-bottom: 10vh;
+}
+
+span{
+    color: red;
+}
+
+
+@media screen and (max-width: 767px) {
+    .home {
+      background-image: url(../../assets/img/run-respsonsive.jpg);
+    }
+    .text-logo{
+        text-shadow: 1px 2px 3px #fff; 
+        color: black;
+    }
+  }

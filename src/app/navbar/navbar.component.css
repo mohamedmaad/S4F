@@ -1,31 +1,47 @@
 .navbar {
   background-color: #fff;
+  box-shadow: 0 4px 6px -2px rgb(109, 109, 109);
 }
+
 a span {
   color: #ff0000;
 }
+
 .liens {
+  font-family: 'Montserrat', sans-serif;
   font-size: 40px;
   color: #172332;
 }
+
 .liens:hover {
   transform: scale(1.1);
   transition: 0.5s cubic-bezier(0, 3, 0.4, 1);
-  /* color: #ff0000; */
 }
-/*
-.liens:hover span{
-  color: #172332;
-} */
+
 .form-inline {
   color: #172332;
-}
-.form-inline .icone {
-  color: #172332a9;
-  font-size: 35px;
-  padding: 5px;
 }
 
 .btn {
   color: #172332;
+}
+
+.nav-item{
+  font-size: 1.7em;
+  font-family: 'Lato', sans-serif;
+  opacity: 0.8;
+}
+
+.nav-item:hover{
+  opacity: 1;
+}
+
+
+
+@media screen and (min-width: 1200px){
+  .form-inline .navmenu .nav-item{
+    display: inline-flex;
+    margin-right: 30px;
+  }
+
 }

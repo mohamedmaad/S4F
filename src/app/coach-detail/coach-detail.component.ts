@@ -32,4 +32,5 @@ export class CoachDetailComponent implements OnInit {
   goBack(): void {
     this.location.back()
   }
+
 }

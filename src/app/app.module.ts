@@ -30,6 +30,8 @@ import { CompanyService } from './_services/company.service'
 import { SessionService } from './_services/session.service'
 import { AuthenticationService } from './_services'
 import { CoachUpdateComponent } from './coach-update/coach-update.component'
+import { FooterComponent } from './footer/footer.component'
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -65,6 +67,8 @@ import { CoachUpdateComponent } from './coach-update/coach-update.component'
     CompanyService,
     SessionService,
     AuthenticationService,
+    RegisterationComponent,
+    FooterComponent,
   ],
   bootstrap: [AppComponent],
 })

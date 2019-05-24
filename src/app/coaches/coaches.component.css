@@ -1,49 +1,21 @@
-.selected {
-  background-color: #cfd8dc !important;
+.fond-blanc
+{
+  background: #cfd8dca8;
+  padding-top: 2vh;
+  margin-bottom: 1vh;
+  border-radius: 5px;
+} 
+
+.list-coaches
+{
   color: white;
+  text-shadow: 1px 1px 1px black; 
+  font-size: 4rem; 
 }
-.coaches {
-  margin: 0 0 2em 0;
-  list-style-type: none;
-  padding: 0;
-  width: 15em;
-}
-/* .coaches li {
-  cursor: pointer;
-  position: relative;
-  left: 0;
-  background-color: #eee;
-  margin: 0.5em;
-  padding: 0.3em 0;
-  height: 1.8em;
-  border-radius: 4px;
-}
-.coaches li.selected:hover {
-  background-color: #bbd8dc !important;
-  color: white;
-}
-.coaches li:hover {
-  color: #607d8b;
-  background-color: #ddd;
-  left: 0.1em;
-} */
-.coaches .text {
-  position: relative;
-  top: -3px;
-}
-.coaches .badge {
-  display: inline-block;
-  font-size: small;
-  color: white;
-  padding: 0.8em 0.7em 0 0.7em;
-  background-color: #343a40;
-  line-height: 1em;
-  position: relative;
-  left: -1px;
-  top: -4px;
-  height: 1.8em;
-  margin-right: 0.8em;
-  border-radius: 4px 0 0 4px;
+
+.background{
+  background: url(../../assets/img/sport-img4.jpg) fixed;
+  background-size: cover;
 }
 
 /* ------------------------------- */
@@ -59,10 +31,16 @@
   text-decoration: none;
 }
 
+/* ------ BACKGROUND ------ */
+
 /* --- Responsive --- */
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .h2 {
     font-size: 1.5rem;
+  }
+  .background{
+    background: url(../../assets/img/trainer-3903947_1920.jpg) fixed;
+    background-size: cover;
   }
 }
 /* IPAD LAPTOP */

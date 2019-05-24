@@ -1,0 +1,11 @@
+footer{
+    height: 5vh;
+    box-shadow: 0 -4px 6px -2px rgb(109, 109, 109);
+}
+small{
+    line-height: 5vh;
+}
+small a{
+    text-decoration: none;
+    
+}

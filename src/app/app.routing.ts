@@ -14,7 +14,7 @@ import { RegisterationComponent } from './registeration/registeration.component'
 import { CoachUpdateComponent } from './coach-update/coach-update.component'
 
 const appRoutes: Routes = [
-  // { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },

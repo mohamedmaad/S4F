@@ -1,61 +1,71 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 col-sm-12">
-      <h2 class="mb-3 h2">Listes des coaches</h2>
-
-      <div class="row">
-        <div class="col-12" *ngFor="let coach of coaches">
-          <a routerLink="/coach/detail/{{ coach._id }}" class="img text-dark">
-            <img
-              src="../../assets/img/47682658_579366792507336_2199209627067875328_n.png"
-              class="rounded-circle w-20 float-left"
-              alt="..."
-            />
-            <h5>
-              {{ coach.firstName }}
-              {{ coach.lastName }}
-            </h5>
-          </a>
-          <p>
-            {{ coach.speciality }}
-            <button
-              type="button"
-              (click)="deleteOne(coach._id)"
-              class="btn text-danger float-right"
-            >
-              <i class="fas fa-trash-alt"></i>
-            </button>
-            <button
-              type="button"
-              class="btn ml-5 offset-8 float-right"
-              routerLink="/coach/edit/{{ coach._id }}"
-            >
-              <i class="fas fa-pen"></i>
-            </button>
-          </p>
-          <hr />
-        </div>
+<div class="background">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 col-sm-12 pb-5 mt-4">
+        <app-add-coach *ngIf="router.url == '/coach/add'"></app-add-coach>
       </div>
+
+      <div class="col-md-6 offset-md-3 col-sm-12">
+        <h2 class="mb-3 text-center pb-3 list-coaches">Listes des coaches</h2>
+
+        <div class="row pb-4">
+          <div class="col-md-6 col-sm-12 text-center">
+            <a
+              class="btn btn-block btn-success offset-md-7 "
+              *ngIf="router.url == '/coaches'"
+              [routerLink]="'/coach/add'"
+            >
+              Créer un nouveau Coach
+            </a>
+
+            <a
+              class="btn btn-block btn-danger offset-md-7"
+              *ngIf="router.url == '/coach/add'"
+              [routerLink]="'/coaches'"
+            >
+              Retour
+            </a>
+          </div>
+          <!-- ./col-md-6 -->
+        </div>
+        <!-- ./row -->
+
+        <div class="row pt-3">
+          <div class="col-12 fond-blanc" *ngFor="let coach of coaches">
+            <a routerLink="/coach/detail/{{ coach._id }}" class="img text-dark">
+              <img
+                src="../../assets/img/Logo-sans-fond.png"
+                class="rounded-circle w-20 float-left"
+                alt="..."
+              />
+              <h5>
+                {{ coach.firstName | titlecase }}
+                {{ coach.lastName | titlecase }}
+              </h5>
+            </a>
+            <p>
+              {{ coach.speciality | titlecase }}
+              <button
+                type="button"
+                (click)="deleteOne(coach._id)"
+                class="btn text-danger float-right"
+              >
+                <i class="fas fa-trash-alt"></i>
+              </button>
+              <button type="button" class="btn ml-5 offset-8 float-right">
+                <i class="fas fa-pen"></i>
+              </button>
+            </p>
+            <hr />
+          </div>
+          <!-- ./col-12 -->
+        </div>
+        <!-- ./row -->
+      </div>
+      <!-- ./col-md-6 -->
     </div>
-
-    <div class="col-md-6 col-sm-12 text-center">
-      <a
-        class="btn btn-secondary offset-md-7 "
-        *ngIf="router.url == '/coaches'"
-        [routerLink]="'/coach/add'"
-      >
-        Créer un nouveau Coach
-      </a>
-
-      <a
-        class="btn btn-danger offset-10"
-        *ngIf="router.url == '/coach/add'"
-        [routerLink]="'/coaches'"
-      >
-        Retour
-      </a>
-
-      <app-add-coach *ngIf="router.url == '/coach/add'"></app-add-coach>
-    </div>
+    <!-- ./row -->
   </div>
+  <!-- ./container -->
 </div>
+<!-- ./background -->

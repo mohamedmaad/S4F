@@ -1,0 +1,30 @@
+﻿<div *ngIf="logged">
+  <app-navbar></app-navbar>
+</div>
+<!-- main app container -->
+
+  <!-- <div class="container"> -->
+    
+      <div>
+        <alert></alert>
+        <router-outlet (activate)="(changeOfRoutes)"></router-outlet>
+
+      </div>
+
+      <!-- <app-home></app-home> -->
+    
+  <!-- </div> -->
+
+  <div *ngIf="logged">
+    <app-navbar></app-navbar>
+  </div>
+
+<!-- credits -->
+<!-- <div class="text-center">
+  <p>
+    <a href="#" target="_top"></a>
+  </p>
+  <p>
+    <a href="#" target="_top"></a>
+  </p>
+</div> -->

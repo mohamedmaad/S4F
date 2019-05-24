@@ -1,4 +1,6 @@
-<div class="form w-100 mx-3">
+<h2 class="text-center pb-3">Ajouter une Séance</h2>
+
+<div class="form w-100">
   <form method="" class="" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
     <div class="form-group">
       <label for="coaches">Choisir le coach</label>
@@ -13,7 +15,7 @@
       >
         <option [value]="null">Choisir un coach</option>
         <option *ngFor="let coach of coaches" [value]="coach.lastName"
-          >{{ coach.firstName }} {{ coach.lastName }}</option
+          >{{ coach.firstName | titlecase }} {{ coach.lastName | titlecase }}</option
         >
       </select>
     </div>
@@ -31,7 +33,7 @@
       >
         <option [value]="null">Choisir l'entreprise</option>
         <option *ngFor="let company of companies" [value]="company.name">{{
-          company.name
+          company.name | titlecase
         }}</option>
       </select>
     </div>
@@ -136,7 +138,7 @@
       type="submit"
       value="Valider"
       [disabled]="f.invalid"
-      class="btn btn-primary d-block m-auto"
+      class="btn btn-block btn-success"
     />
   </form>
 </div>
