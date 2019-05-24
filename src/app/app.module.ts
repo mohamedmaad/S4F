@@ -61,6 +61,7 @@ import { FooterComponent } from './footer/footer.component'
     SessionDetailComponent,
     HomeComponent,
     CoachUpdateComponent,
+    FooterComponent,
   ],
   providers: [
     CoachService,
@@ -68,7 +69,6 @@ import { FooterComponent } from './footer/footer.component'
     SessionService,
     AuthenticationService,
     RegisterationComponent,
-    FooterComponent,
   ],
   bootstrap: [AppComponent],
 })
