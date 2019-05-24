@@ -60,7 +60,7 @@ import { FooterComponent } from './footer/footer.component'
     SessionDetailComponent,
     HomeComponent,
     RegisterationComponent,
-    FooterComponent,
+    FooterComponent
   ],
   providers: [CoachService, CompanyService, SessionService],
   bootstrap: [AppComponent],

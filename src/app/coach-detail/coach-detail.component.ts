@@ -34,15 +34,4 @@ export class CoachDetailComponent implements OnInit {
     this.location.back()
   }
 
-  /* UPLOAD IMAGE */
-
-  /* selectedFile = null;
-
-  onFileSelected(event){
-    this.selectedFile = event.target.files[0];
-  }
-
-  onUpload(){
-    this.http.post('')
-  }*/
 }

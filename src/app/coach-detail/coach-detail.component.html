@@ -8,11 +8,10 @@
             class="img-thumbnail rounded-circle profilpicture"><br /><br />
 
 
-
-          <!-- <input type="file" (change)="onFileSelected($event)">
-
-          <button type="button" (click)="onUpload">Upload</button> -->
-
+          <form enctype="multipart/form-data" method="POST">
+            <input type="file" name="photo">
+            <button type="button">Upload</button>
+          </form>
 
 
           <h3>{{ coach.firstName | titlecase }} {{ coach.lastName | uppercase}}</h3>
