@@ -1,7 +1,7 @@
 ﻿import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { ReactiveFormsModule } from '@angular/forms'
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component'
@@ -28,7 +28,8 @@ import { HomeComponent } from './home/home.component'
 import { RegisterationComponent } from './registeration/registeration.component'
 import { CompanyService } from './_services/company.service'
 import { SessionService } from './_services/session.service'
-
+import { AuthenticationService } from './_services'
+import { CoachUpdateComponent } from './coach-update/coach-update.component'
 @NgModule({
   imports: [
     BrowserModule,
@@ -57,9 +58,14 @@ import { SessionService } from './_services/session.service'
     AddSessionComponent,
     SessionDetailComponent,
     HomeComponent,
-    RegisterationComponent,
+    CoachUpdateComponent,
   ],
-  providers: [CoachService, CompanyService, SessionService],
+  providers: [
+    CoachService,
+    CompanyService,
+    SessionService,
+    AuthenticationService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

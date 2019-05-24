@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { Location } from '@angular/common'
 
-import { Coach } from '@app/_models/coach'
 import { CoachService } from '@app/_services/coach.service'
 
 @Component({

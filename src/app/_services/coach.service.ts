@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core'
 
-import { Coach } from '@app/_models/coach'
-import { COACHES } from '@app/mock/mock-coaches'
-import { Observable, of } from 'rxjs'
 import { HttpClient } from '@angular/common/http'
 
 @Injectable({
@@ -18,7 +15,6 @@ export class CoachService {
 
   getCoach(id: string) {
     return this.http.get(`${this.URI_TEST}/coaches/detail/${id}`)
-    // return of(COACHES.find(coach => coach.id === id))
   }
 
   // coaches.component ca return tous les coaches de la base de donnees
@@ -30,6 +26,15 @@ export class CoachService {
   addCoach(data) {
     console.log(data)
     return this.http.post(`${this.URI_TEST}/coaches/add`, data)
+  }
+
+  getEdit(id: string) {
+    return this.http.get(`${this.URI_TEST}/coaches/edit/${id}`)
+  }
+
+  updateCoach(id: string, data) {
+    console.log(data)
+    this.http.post(`${this.URI_TEST}/coaches/update/${id}`, data)
   }
 
   // suppression d'un coach dans ma bdd

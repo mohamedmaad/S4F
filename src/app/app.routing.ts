@@ -11,6 +11,7 @@ import { CompanyDetailComponent } from './company-detail/company-detail.componen
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component'
 import { HomeComponent } from './home/home.component'
 import { RegisterationComponent } from './registeration/registeration.component'
+import { CoachUpdateComponent } from './coach-update/coach-update.component'
 
 const appRoutes: Routes = [
   // { path: '', component: HomeComponent },
@@ -22,6 +23,8 @@ const appRoutes: Routes = [
   { path: 'coaches', component: CoachesComponent },
   { path: 'coach/detail/:id', component: CoachDetailComponent },
   { path: 'coach/add', component: CoachesComponent },
+  { path: 'coach/edit/:id', component: CoachUpdateComponent },
+  { path: 'coach/update/:id', component: CoachUpdateComponent },
   { path: 'seances', component: SessionsComponent },
   { path: 'seances/ajouter', component: SessionsComponent },
   { path: 'seance/detail/:id', component: SessionDetailComponent },

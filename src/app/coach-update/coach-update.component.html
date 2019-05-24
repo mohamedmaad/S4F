@@ -1,0 +1,107 @@
+<h2>Modification des informations</h2>
+<div *ngFor="let coach of coach">
+  <form #form="ngForm" (ngSubmit)="submitUpdate(form)" *ngIf="active">
+    <div class="form-group">
+      <label for="firstname">Prénom</label>
+      <input
+        type="text"
+        name="firstName"
+        required
+        [(ngModel)]="coach.firstName"
+        #firstName="ngModel"
+        [class.is-invalid]="firstName.touched && firstName.invalid"
+        [class.is-valid]="firstName.valid"
+        value="{{ coach.firstName }}"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="lastName">Nom</label>
+      <input
+        type="text"
+        name="lastName"
+        required
+        [(ngModel)]="coach.lastName"
+        #lastName="ngModel"
+        [class.is-invalid]="lastName.touched && lastName.invalid"
+        [class.is-valid]="lastName.valid"
+        value="{{ coach.lastName }}"
+        class="form-control"
+      />
+    </div>
+    <!-- <div class="form-group">
+      <label for="dateofbirth">Date de naissance</label>
+      <input
+        type="date"
+        name="dateOfBirth"
+        required
+        [(ngModel)]="form.dateOfBirth"
+        #dateOfBirth="ngModel"
+        [class.is-invalid]="dateOfBirth.touched && dateOfBirth.invalid"
+        [class.is-valid]="dateOfBirth.valid"
+        value="{{ coach.dateOfBirth }}"
+        class="form-control"
+      />
+    </div> -->
+    <div class="form-group">
+      <label for="company">Entreprise</label>
+      <input
+        type="text"
+        name="company"
+        required
+        [(ngModel)]="coach.company"
+        #company="ngModel"
+        [class.is-invalid]="company.touched && company.invalid"
+        [class.is-valid]="company.valid"
+        value="{{ coach.company }}"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="speciality">Spécialité</label>
+      <input
+        type="text"
+        name="speciality"
+        required
+        [(ngModel)]="coach.speciality"
+        #speciality="ngModel"
+        [class.is-invalid]="speciality.touched && speciality.invalid"
+        [class.is-valid]="speciality.valid"
+        value="{{ coach.speciality }}"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        name="email"
+        required
+        [(ngModel)]="coach.email"
+        #email="ngModel"
+        [class.is-invalid]="email.touched && email.invalid"
+        [class.is-valid]="email.valid"
+        value="{{ coach.email }}"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="tel">Téléphone</label>
+      <input
+        type="text"
+        name="tel"
+        required
+        [(ngModel)]="coach.tel"
+        #tel="ngModel"
+        [class.is-invalid]="tel.touched && tel.invalid"
+        [class.is-valid]="tel.valid"
+        value="{{ coach.tel }}"
+        class="form-control"
+      />
+    </div>
+    <br />
+    <button type="submit" [disabled]="form.invalid" class="btn btn-primary">
+      Modifier
+    </button>
+  </form>
+</div>

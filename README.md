@@ -1,3 +1,3 @@
-# angular-7-User Registration - Login
+# angular-7 - Street4Fit App
 
-Angular 7 User Registration and Login with Angular CLI
+Angular 7 Street4Fit App CRUD
