@@ -22,8 +22,18 @@ export class CompanyService {
   }
 
   addCompany(data) {
-    console.log(data)
+    //console.log(data)
     return this.http.post(`${this.URI_TEST}/company/add`, data)
+  }
+
+  getEdit(id: string) {
+    return this.http.get(`${this.URI_TEST}/company/edit/${id}`)
+  }
+
+  updateCompany(id: string, data) {
+    //console.log(data)
+    //console.log(id)
+    return this.http.post(`${this.URI_TEST}/company/update/${id}`, data)
   }
 
   deleteOne(id: string) {

@@ -28,6 +28,16 @@ export class SessionService {
     return this.http.post(`${this.URI_TEST}/session/add`, data)
   }
 
+  getEdit(id: string) {
+    return this.http.get(`${this.URI_TEST}/session/edit/${id}`)
+  }
+
+  updateSession(id: string, data) {
+    //console.log(data)
+    //console.log(id)
+    return this.http.post(`${this.URI_TEST}/session/update/${id}`, data)
+  }
+
   deleteOne(id: string) {
     return this.http.post(`${this.URI_TEST}/session/delete`, { id })
   }

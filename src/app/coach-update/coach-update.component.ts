@@ -35,10 +35,10 @@ export class CoachUpdateComponent implements OnInit {
   }
 
   updateCoach(data) {
-    this.route.params.subscribe(params => {
-      this.coachService.updateCoach(data, params['id'])
-      this.response = params as string[]
-      //this.router.navigate(['coaches'])
+    let id = this.route.snapshot.paramMap.get('id')
+    return this.coachService.updateCoach(id, data).subscribe(coach => {
+      this.coach = coach
+      this.router.navigate(['coaches'])
     })
   }
 }

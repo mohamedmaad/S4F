@@ -24,17 +24,20 @@ export class CoachService {
 
   // ajout d'un coach dans ma bdd
   addCoach(data) {
-    console.log(data)
+    //console.log(data)
     return this.http.post(`${this.URI_TEST}/coaches/add`, data)
   }
 
+  // Récupération des données du coach à mettre dans les input du formulaire
   getEdit(id: string) {
     return this.http.get(`${this.URI_TEST}/coaches/edit/${id}`)
   }
 
+  // Envoie des données modifié
   updateCoach(id: string, data) {
-    console.log(data)
-    this.http.post(`${this.URI_TEST}/coaches/update/${id}`, data)
+    //console.log(data)
+    //console.log(id)
+    return this.http.post(`${this.URI_TEST}/coaches/update/${id}`, data)
   }
 
   // suppression d'un coach dans ma bdd
@@ -43,6 +46,4 @@ export class CoachService {
   }
 
   // Upload Image
-
-
 }

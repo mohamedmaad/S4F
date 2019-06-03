@@ -31,6 +31,8 @@ import { SessionService } from './_services/session.service'
 import { AuthenticationService } from './_services'
 import { CoachUpdateComponent } from './coach-update/coach-update.component'
 import { FooterComponent } from './footer/footer.component'
+import { CompanyUpdateComponent } from './company-update/company-update.component'
+import { SessionUpdateComponent } from './session-update/session-update.component'
 
 @NgModule({
   imports: [
@@ -62,6 +64,8 @@ import { FooterComponent } from './footer/footer.component'
     HomeComponent,
     CoachUpdateComponent,
     FooterComponent,
+    CompanyUpdateComponent,
+    SessionUpdateComponent,
   ],
   providers: [
     CoachService,

@@ -12,6 +12,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { HomeComponent } from './home/home.component'
 import { RegisterationComponent } from './registeration/registeration.component'
 import { CoachUpdateComponent } from './coach-update/coach-update.component'
+import { CompanyUpdateComponent } from './company-update/company-update.component'
+import { SessionUpdateComponent } from './session-update/session-update.component'
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,9 +30,13 @@ const appRoutes: Routes = [
   { path: 'seances', component: SessionsComponent },
   { path: 'seances/ajouter', component: SessionsComponent },
   { path: 'seance/detail/:id', component: SessionDetailComponent },
+  { path: 'seance/edit/:id', component: SessionUpdateComponent },
+  { path: 'seance/modifier/:id', component: SessionUpdateComponent },
   { path: 'entreprises', component: CompanyComponent },
   { path: 'entreprise/ajouter', component: CompanyComponent },
   { path: 'entreprise/detail-c/:id', component: CompanyDetailComponent },
+  { path: 'entreprise/edit/:id', component: CompanyUpdateComponent },
+  { path: 'entreprise/modifier/:id', component: CompanyUpdateComponent },
 
   // otherwise redirect to home
   { path: '**', redirectTo: '' },

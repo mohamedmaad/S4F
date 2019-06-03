@@ -1,75 +1,77 @@
-<h2 class="text-center pb-3">Ajouter une Séance</h2>
-
-<div class="form w-100">
-  <form method="" class="" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+<h2>Modification des informations de la séance</h2>
+<div *ngFor="let session of session">
+  <form #form="ngForm" (ngSubmit)="submitUpdate(form)" *ngIf="active">
     <div class="form-group">
-      <label for="coaches">Choisir le coach</label>
-      <select
-        ngModel
+      <label for="coaches">Choisir un coach</label>
+      <!-- Ici on essai de récupérer la liste de coach et on doit pouvoir choisir un coach dans une liste -->
+      <input
         #coach="ngModel"
         name="coach"
         class="form-control"
-        [ngModel]="null"
+        [(ngModel)]="session.coach"
         [class.is-invalid]="coach.value == 'null'"
         [class.is-valid]="coach.value != null"
-      >
-        <option [value]="null">Choisir un coach</option>
-        <option *ngFor="let coach of coaches" [value]="coach.lastName">
+        value="{{ session.coach }}"
+        list="mycoaches"
+      />
+      <datalist id="mycoaches">
+        <select>
+          <option *ngFor="let c of coaches" [value]="c.lastName"
+            >{{ c.lastName }}
+          </option>
+        </select>
+      </datalist>
+      <!-- <option *ngFor="let coach of coaches" [value]="session.coach">
           {{ coach.firstName | titlecase }}
           {{ coach.lastName | titlecase }}
-        </option>
-      </select>
+        </option> -->
     </div>
     <div class="form-group">
       <label for="companies">Choisir une entreprise</label>
-      <select
-        ngModel
+      <!-- Ici on essai de récupérer la liste des entreprises et on doit pouvoir choisir une entreprise dans une liste -->
+      <input
         #company="ngModel"
         name="company"
         class="form-control"
         id="company"
-        [ngModel]="null"
+        [(ngModel)]="session.company"
         [class.is-invalid]="company.value == 'null'"
         [class.is-valid]="company.value != null"
-      >
-        <option [value]="null">Choisir l'entreprise</option>
-        <option *ngFor="let company of companies" [value]="company.name">{{
-          company.name | titlecase
-        }}</option>
-      </select>
+        value="{{ session.company }}"
+      />
+      <!-- <option value="{{ session.company }}"></option>
+        <option *ngFor="let company of companies">
+          {{ company.name | titlecase }}
+        </option> -->
     </div>
     <div class="form-group">
-      <label for="date-input" class="col-form-label">Date</label>
-      <div class="">
-        <input
-          ngModel
-          #date="ngModel"
-          name="date"
-          required
-          name="date"
-          class="form-control"
-          type="date"
-          value="2011-08-19"
-          id="date-input"
-          [(ngModel)]="today"
-          [class.is-valid]="date.touched"
-        />
-      </div>
+      <label for="date-input">Date</label>
+      <input
+        #date="ngModel"
+        name="date"
+        required
+        name="date"
+        class="form-control"
+        type="date"
+        id="date-input"
+        [(ngModel)]="session.date"
+        [class.is-valid]="date.touched"
+        value="{{ session.date }}"
+      />
     </div>
     <div class="form-group">
       <label for="minParticipant">Nombre de participants minimum</label>
       <input
-        ngModel
         required
         name="minParticipant"
         type="number"
         class="form-control"
         id="minParticipant"
-        placeholder="Minimum"
+        value="{{ session.minParticipant }}"
         min="1"
         max="20"
         #minParticipant="ngModel"
-        [ngModel]="null"
+        [(ngModel)]="session.minParticipant"
         [class.is-invalid]="minParticipant.value == 'null'"
         [class.is-valid]="minParticipant.value != null"
       />
@@ -77,17 +79,16 @@
     <div class="form-group">
       <label for="maxParticipant">Nombre de participants maximum</label>
       <input
-        ngModel
         required
         name="maxParticipant"
         type="number"
         class="form-control"
         id="maxParticipant"
-        placeholder="Maximum"
+        value="{{ session.maxParticipant }}"
         min="1"
         max="20"
         #maxParticipant="ngModel"
-        [ngModel]="null"
+        [(ngModel)]="session.maxParticipant"
         [class.is-invalid]="maxParticipant.value == 'null'"
         [class.is-valid]="maxParticipant.value != null"
       />
@@ -95,27 +96,27 @@
     <div class="form-group">
       <label for="timeSession">Heure</label>
       <input
-        ngModel
         required
         name="timeSession"
         type="time"
         class="form-control"
         id="timeSession"
         #hour="ngModel"
-        [(ngModel)]="timeSession"
+        [(ngModel)]="session.timeSession"
+        value="{{ session.timeSession }}"
       />
     </div>
     <div class="form-group">
       <label for="duration">Durée de la séance</label>
       <input
-        ngModel
         required
         #duration="ngModel"
         name="duration"
         type="time"
         class="form-control"
         id="duration"
-        placeholder="1"
+        [(ngModel)]="session.duration"
+        value="{{ session.duration }}"
         [class.is-invalid]="duration.value < 0"
         [class.is-valid]="duration.value > 0"
       />
@@ -123,24 +124,22 @@
     <div class="form-group">
       <label for="sport">Type de sport</label>
       <input
-        ngModel
+        type="text"
+        name="sport"
         required
         #sport="ngModel"
-        name="sport"
-        type="text"
-        class="form-control"
         id="sport"
-        [ngModel]="f.sport"
-        [class.is-invalid]="sport.value == 'null'"
-        [class.is-valid]="sport.value != null"
+        [class.is-invalid]="sport.touched && sport.invalid"
+        [class.is-valid]="sport.valid"
+        ngModel
+        [ngModel]="session.sport"
+        value="{{ session.sport }}"
+        class="form-control"
       />
     </div>
-    <input
-      type="submit"
-      value="Valider"
-      [disabled]="f.invalid"
-      class="btn btn-block btn-success"
-    />
+    <br />
+    <button type="submit" [disabled]="form.invalid" class="btn btn-primary">
+      Modifier
+    </button>
   </form>
 </div>
-<!--[disabled]="f.invalid"-->
